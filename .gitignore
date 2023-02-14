@@ -1,0 +1,9 @@
+#dependencies
+node_modules/
+package-lock.json
+
+# output from webpack
+build/
+
+# DS Store
+.DS_Store

@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(114, 125, 153, 0.5);
+  overflow-y: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: none;
+}
+
+#store-name {
+  display: flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  margin: 0;
+  background-color: rgba(114, 125, 153, 0.5);
+  border-bottom: 2px double black;
+
+  h2{
+    margin: 0;
+  }
+}
+
+#display-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+#actions-dispatched-container {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px double black;
+  background-color: rgba(114, 125, 153, 0.5);
+
+  #action-header {
+    text-align: center;
+    border-bottom: 2px double black;
+    margin: 0;
+    padding: 1rem 0rem;
+  }
+}
+
+#action-list {
+  overflow-y: scroll;
+  height: 22rem;
+
+  ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+
+    li {
+      margin-bottom: 0.25rem;
+      border: 1px solid black;
+      border-radius: 1rem;
+      padding: 1rem 0rem;
+      padding-left: 0.75rem;
+      background-color: rgba(136, 149, 182, 0.5);
+    }
+  }
+}
+
+#visualization-container {
+  flex-basis: 70%;
+  border-left: 2px double black;
+}
+
+#buttons-container {
+  display: flex;
+  column-gap: 1rem;
+  padding: 0.65rem;
+  border-bottom: 2px double black;
+}
+
+#display-button {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+  cursor: pointer;
+  transition-duration: 0.2s;
+
+  &:hover {
+    background-color: rgba(138, 152, 186, 0.5);
+    color: white;
+  }
+
+  &:active {
+    background-color: rgba(99, 109, 133, 0.5);
+  }
+}
+
+#display-space {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  padding-right: 3.5rem;
+
+  #current-state-container {
+    overflow-y: scroll;
+    height: 18rem;
+    padding-right: 2.5rem;
+
+    .current-state-values {
+      margin: 0;
+      margin-left: 1rem;
+      border: 1px solid rgb(151, 151, 151);
+      padding: 1rem 0.5rem;
+      border-radius: 0.25rem;
+    }
+  }
+}
+
+// --------------------------------------------------------------------------------
+
+.xAxis path
+
+.xAxis line {
+  stroke: teal;
+  shape-rendering: crispEdges;
+}
+
+.xAxis text {
+  font-family: Optima, Futura, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  fill: teal;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+
+// Media Queries
+// @media screen and (max-height: 500px) {
+//   #display-space {
+//     height: 28rem;
+//   }
+  
+//   #action-list {
+//     height: 31.25rem;
+//   }
+// }
