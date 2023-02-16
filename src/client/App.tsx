@@ -4,7 +4,7 @@ import { ActionsDispatched } from './components/ActionsDispatched';
 import { VisualizationContainer } from './components/VisualizationContainer';
 import useExtensionStore from './store/useExtensionStore';
 import { useStore } from 'zustand';
-
+import './App.scss';
 
 const App = () => {
 
