@@ -41,11 +41,8 @@ const useExtensionStore = create<Store>()((set, get) => ({
       actionsDispatched: [...state.actionsDispatched, snapshot],
     })),
   resetState: () => {
-    // const curr = get();
-    // console.log('state is: ', curr.previousStates)
-    // console.log('first is: ', curr.previousStates[0])
     set((state) => ({
-      previousStates: [],
+      previousStates: [state.initialState],
       actionsDispatched: [],
     }));
   },

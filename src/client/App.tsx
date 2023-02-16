@@ -28,17 +28,14 @@ const App = () => {
           sendResponse: Function
         ) => {
           if (message.body === 'Data') {
-            console.log('Data received: ', previousStates);
             addPreviousState(message.state);
             addActionDispatched(message.actions);
           }
           if (message.body === 'Innit') {
-            console.log('Innit message fired')
             if (previousStates.length === 0) {
               setInitialState(message.state);
               addPreviousState(message.state);
             }
-            console.log('Innit result in: ', previousStates);
           }
           if (message.body === 'Reset') {
             resetState();
