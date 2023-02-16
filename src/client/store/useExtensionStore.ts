@@ -24,9 +24,13 @@ const useExtensionStore = create<Store>()((set, get) => ({
   // State and Reducer Logic for the Zustand Application
   initialState: '',
   setInitialState: (snapshot) => {
-    set({
-      initialState: snapshot,
-    });
+    const state = get();
+    if (state.initialState.length === 0) {
+      set((state) => ({
+        initialState: snapshot,
+      }));
+    state.addPreviousState(snapshot);
+    };
   },
   previousStates: [],
   addPreviousState: (snapshot) => {

@@ -7,7 +7,14 @@ import { useStore } from 'zustand';
 import './App.scss';
 
 const App = () => {
-  const { addPreviousState, addActionDispatched, resetState, setInitialState, previousStates } = useStore(useExtensionStore);
+  const {
+    addPreviousState,
+    addActionDispatched,
+    resetState,
+    setInitialState,
+    previousStates,
+    initialState,
+  } = useStore(useExtensionStore);
 
   let mainPort: any;
   let connected: boolean = false;
@@ -32,10 +39,7 @@ const App = () => {
             addActionDispatched(message.actions);
           }
           if (message.body === 'Innit') {
-            if (previousStates.length === 0) {
-              setInitialState(message.state);
-              addPreviousState(message.state);
-            }
+            setInitialState(message.state);
           }
           if (message.body === 'Reset') {
             resetState();
