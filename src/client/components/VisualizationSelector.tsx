@@ -3,7 +3,7 @@ import useExtensionStore from '../store/useExtensionStore';
 import { useStore } from 'zustand';
 import './VisualizationSelector.scss';
 
-export const VisualizationSelector = () => {
+export const VisualizationSelector = (): JSX.Element => {
   const { showState, showTree, showDiff, displayState, displayDiff } = useStore(useExtensionStore);
 
   return (

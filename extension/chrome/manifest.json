@@ -3,7 +3,7 @@
   "name": "ZuKeeper: Zustand DevTools",
   "description": "Zustand DevTools for debugging application's state changes.",
   "manifest_version": 3,
-  "homepage_url": "https://github.com/Team-Eevee-OSP/Zukeeper",
+  "homepage_url": "https://github.com/oslabs-beta/Zukeeper#readme",
   "author": "Chris Olmsted, George Vazquez, Santi Lorenzo, Stephen Lee",
 
   "devtools_page": "html/devtools.html",
@@ -22,10 +22,19 @@
     }
   ],
   "web_accessible_resources": [{
-    "resources": ["/js/contentScript.js", "../src/client/assets/document.png", "../src/client/assets/feedback.png", "../src/client/assets/support.png"],
+    "resources": [
+      "/js/contentScript.js", 
+      "../src/client/assets/document.png", 
+      "../src/client/assets/feedback.png", 
+      "../src/client/assets/support.png"
+    ],
     "matches": ["<all_urls>"]
   }],
-  "permissions": ["tabs", "activeTab", "scripting"],
+  "permissions": [
+    "tabs", 
+    "activeTab", 
+    "scripting"
+  ],
   "host_permissions": ["<all_urls>"], 
   "externally_connectable": {
     "matches": [

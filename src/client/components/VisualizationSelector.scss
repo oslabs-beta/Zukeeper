@@ -1,10 +1,12 @@
+@import '../Colors.scss';
+
 .visualization-wrapper {
   display: flex;
   // column-gap: 1rem;
   // padding: 0.65rem;
-  background: rgba(138, 152, 186, 0.5);
+  background: $grey;
   width: 100%;
-  border-bottom: 2px double black;
+  border-bottom: 2px double $black;
   justify-content: end;
   align-items: center;
   position: relative;
@@ -16,28 +18,29 @@
 
 .visualization-current-button {
   position: absolute;
-  color: white;
+  color: $black;
   left: 30px;
   font-size: 14px;
 }
 
 .visualization-display-button {
   padding: 0.4rem .9rem;
-  margin: 5px 0px;
-  border: 1px solid rgb(255, 255, 255);
+  margin: 5px 1px;
+  border: 1px solid $light-medium-grey;
+  border-radius: 5px;
   cursor: pointer;
   transition-duration: 0.2s;
   font-size: 14px;
-  background: #3a2036;
-  color: white;
+  background: $grey;
+  color: $black;
 
   &:hover {
-    background-color: rgba(138, 152, 186, 0.5);
-    color: white;
+    background-color: $medium-grey;
+    color: $white;
   }
 
   &:active {
-    background-color: rgba(99, 109, 133, 0.5);
+    background-color: $medium-grey;
   }
 }
 
