@@ -7,8 +7,7 @@ import { useStore } from 'zustand';
 import './App.scss';
 
 const App = () => {
-  const { addPreviousState, addActionDispatched, resetState, setInitialState, previousStates } =
-    useStore(useExtensionStore);
+  const { addPreviousState, addActionDispatched, resetState, setInitialState, previousStates } = useStore(useExtensionStore);
 
   let mainPort: any;
   let connected: boolean = false;

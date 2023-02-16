@@ -1,7 +1,7 @@
 {
   "name": "zukeeper",
   "version": "1.0.0",
-  "description": "A native visualization developer tool for zustand",
+  "description": "A native, visualization developer tool for Zustand",
   "main": "./src/client/index.js",
   "scripts": {
     "build": "webpack",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Team-Eevee-OSP/Zukeeper.git"
+    "url": "git+https://github.com/oslabs-beta/Zukeeper"
   },
   "keywords": [],
   "author": "Chris Olmsted, George Vazquez, Santi Lorenzo, Stephen Lee",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Team-Eevee-OSP/Zukeeper/issues"
+    "url": "https://github.com/oslabs-beta/Zukeeper/issues"
   },
-  "homepage": "https://github.com/Team-Eevee-OSP/Zukeeper#readme",
+  "homepage": "https://github.com/oslabs-beta/Zukeeperr#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",

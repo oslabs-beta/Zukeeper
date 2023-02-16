@@ -8,18 +8,18 @@ import './DiffDisplay.scss';
 
 export const DiffDisplay = () => {
   const { previousStates } = useStore(useExtensionStore);
-  if (
-    previousStates[previousStates.length - 2]
-  ) {
-    const differences = diff(
+
+  if (previousStates[previousStates.length - 2]) {
+    const differences: any[] = diff(
       previousStates[previousStates.length - 2],
       previousStates[previousStates.length - 1]
     );
 
-    const diffItems = differences.map((obj: diffProps) => {
-      return <DiffItem obj={obj}></DiffItem>;
+    const diffItems: JSX.Element[] = differences.map((obj: diffProps, idx: number) => {
+      return <DiffItem key={idx} obj={obj}></DiffItem>;
     });
 
     return <div className="diff-item-container">{diffItems}</div>;
-  } else return null;
+  } 
+  else return null;
 };
