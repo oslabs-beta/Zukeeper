@@ -4,11 +4,10 @@ import { ActionsDispatched } from './components/ActionsDispatched';
 import { VisualizationContainer } from './components/VisualizationContainer';
 import useExtensionStore from './store/useExtensionStore';
 import { useStore } from 'zustand';
-
+import './App.scss';
 
 const App = () => {
-
-  const { addPreviousState, addActionDispatched, resetState }  = useStore(useExtensionStore);
+  const { addPreviousState, addActionDispatched, resetState, setInitialState, previousStates } = useStore(useExtensionStore);
 
   let mainPort: any;
   let connected: boolean = false;
@@ -22,19 +21,29 @@ const App = () => {
 
     if (connected) {
       //listening for messages from background.js
-      mainPort.onMessage.addListener((message: any, sender: chrome.runtime.MessageSender, sendResponse: Function) => {
-        if (message.body === 'Data') {
-          addPreviousState(message.state);
-          addActionDispatched(message.actions);
+      mainPort.onMessage.addListener(
+        (
+          message: any,
+          sender: chrome.runtime.MessageSender,
+          sendResponse: Function
+        ) => {
+          if (message.body === 'Data') {
+            addPreviousState(message.state);
+            addActionDispatched(message.actions);
+          }
+          if (message.body === 'Innit') {
+            if (previousStates.length === 0) {
+              setInitialState(message.state);
+              addPreviousState(message.state);
+            }
+          }
+          if (message.body === 'Reset') {
+            resetState();
+          }
         }
-
-        if (message.body === 'Reset'){
-          console.log('got here')
-          resetState();
-        }
-      });
+      );
     }
-  }
+  };
 
   useEffect(() => {
     connect();
@@ -44,7 +53,6 @@ const App = () => {
     });
   }, []);
 
-  
   return (
     <>
       <Header />

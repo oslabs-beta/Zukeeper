@@ -5,8 +5,9 @@ import { TreeDisplay } from './TreeDisplay';
 import { DiffDisplay } from './DiffDisplay';
 import useExtensionStore from '../store/useExtensionStore';
 import { useStore } from 'zustand';
+import './VisualizationContainer.scss'
 
-export const VisualizationContainer = () => {
+export const VisualizationContainer = (): JSX.Element => {
   const { displayState, displayDiff } = useStore(useExtensionStore);
 
   return (

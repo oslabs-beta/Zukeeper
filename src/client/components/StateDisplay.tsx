@@ -1,7 +1,7 @@
 import React from 'react';
 import useExtensionStore from '../store/useExtensionStore';
 import { useStore } from 'zustand';
-
+import './StateDisplay.scss';
 
 export const StateDisplay = () => {
   // grabbing all previous states from our store
@@ -9,7 +9,7 @@ export const StateDisplay = () => {
 
   // determine if there is an non-undefined value for the current state - which should be the last element of the array
   // if yes, grab that value, if no, return an empty array
-  const currState: any = (previousStates[previousStates.length - 1] ? previousStates[previousStates.length - 1] : [])
+  const currState: (string | never[]) = (previousStates[previousStates.length - 1] ? previousStates[previousStates.length - 1] : [])
   const currStateArr: JSX.Element[] = [];
 
   // helper function to produce an array of JSX elements containing current state properties and their values
@@ -30,8 +30,7 @@ export const StateDisplay = () => {
 
   return (
     <>
-      <h2>Current State:</h2>
-      <div id="current-state-container">
+      <div className="current-state-container">
         {currStateDisplayResult}
       </div>
     </>

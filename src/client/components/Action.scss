@@ -1,0 +1,26 @@
+.action-button-container {
+  display: flex;
+  position: relative;
+  justify-content: start;
+}
+
+.action-large-button {
+  background-color: #3a2036;
+  font-size: 12px;
+  color:white;
+  border: none;
+  border-top: solid white 1px;
+  padding: 10px 8px;
+  width: 100%;
+  text-align:left;
+}
+
+.action-small-button {
+  position: absolute;
+  right: 12px; 
+  top: 7px;
+  border: solid 1px white;
+  color: white;
+  background-color: #3a2036;
+  border-radius: 2px;
+}
