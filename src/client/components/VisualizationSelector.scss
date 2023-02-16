@@ -2,8 +2,6 @@
 
 .visualization-wrapper {
   display: flex;
-  // column-gap: 1rem;
-  // padding: 0.65rem;
   background: $grey;
   width: 100%;
   border-bottom: 2px double $black;
@@ -45,5 +43,5 @@
 }
 
 .visualization-button-color {
-  background: medium-grey;
+  background: $medium-grey;
 }
