@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Team-Eevee-OSP/Zukeeper.git"
+    "url": "git+https://github.com/oslabs-beta/Zukeeper.git"
   },
   "keywords": [],
   "author": "Chris Olmsted, George Vazquez, Santi Lorenzo, Stephen Lee",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Team-Eevee-OSP/Zukeeper/issues"
+    "url": "https://github.com/oslabs-beta/Zukeeper/issues"
   },
-  "homepage": "https://github.com/Team-Eevee-OSP/Zukeeper#readme",
+  "homepage": "https://github.com/oslabs-beta/Zukeeper#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
