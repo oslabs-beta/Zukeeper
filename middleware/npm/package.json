@@ -1,0 +1,18 @@
+{
+  "name": "zukeeper",
+  "version": "0.0.1",
+  "description": "Dev Tools for Zustand",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oslabs-beta/Zukeeper/tree/main/npm"
+  },
+  "keywords": [
+    "Zustand"
+  ],
+  "author": "Chris Olmsted, George Vazquez, Santi Lorenzo, Stephen Lee",
+  "license": "MIT"
+}
