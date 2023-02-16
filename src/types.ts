@@ -5,6 +5,8 @@ export interface Store {
   showTree: () => void,
   showDiff: () => void,
 
+  initialState: string,
+  setInitialState: (snapshot: string) => void,
   previousStates: string[],
   addPreviousState: (snapshot: string) => void,
   actionsDispatched: string[],
