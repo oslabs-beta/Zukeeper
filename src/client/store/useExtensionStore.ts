@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Store } from '../../types';
+import { Store } from '../../types/types';
 
 const useExtensionStore = create<Store>()((set) => ({
   // State and Reducer Logic for our Extension

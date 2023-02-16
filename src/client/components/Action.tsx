@@ -1,5 +1,5 @@
 import React from 'react';
-import { actionProps } from '../../types'
+import { actionProps } from '../../types/types'
 import './Action.scss'
 
 export const Action = (props: actionProps) => {

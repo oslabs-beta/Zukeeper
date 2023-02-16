@@ -1,6 +1,6 @@
 import React from 'react';
 import Tree from 'react-d3-tree';
-import { RawNodeDatum } from '../../types';
+import { RawNodeDatum } from '../../types/types';
 import useExtensionStore from '../store/useExtensionStore';
 import { useStore } from 'zustand';
 import './TreeDisplay.scss'

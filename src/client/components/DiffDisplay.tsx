@@ -3,7 +3,7 @@ import useExtensionStore from '../store/useExtensionStore';
 import { useStore } from 'zustand';
 const diff = require('deep-diff').diff;
 import { DiffItem } from './DiffItem';
-import { diffProps } from '../../types';
+import { diffProps } from '../../types/types';
 import './DiffDisplay.scss';
 
 export const DiffDisplay = () => {

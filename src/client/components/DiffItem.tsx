@@ -1,5 +1,5 @@
 import React from 'react';
-import { diffProps } from '../../types'
+import { diffProps } from '../../types/types'
 import useExtensionStore from '../store/useExtensionStore';
 import { useStore } from 'zustand';
 import './DiffItem.scss';

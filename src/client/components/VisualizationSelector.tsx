@@ -15,9 +15,9 @@ export const VisualizationSelector = () => {
         }
       </div>
       <div className="visualization-buttons-container">
-        <button className="visualization-display-button" onClick={showState}>State</button>
-        <button className="visualization-display-button" onClick={showDiff}>Diff</button>
-        <button className="visualization-display-button" onClick={showTree}>Tree</button>
+        <button className={`visualization-display-button ${ displayState ? 'visualization-button-color' : '' } `} onClick={showState}>State</button>
+        <button className={`visualization-display-button ${ displayDiff ? 'visualization-button-color' : '' } `} onClick={showDiff}>Diff</button>
+        <button className={`visualization-display-button ${ !displayState && !displayDiff ? 'visualization-button-color' : '' } `} onClick={showTree}>Tree</button>
       </div>
     </div>
   );
