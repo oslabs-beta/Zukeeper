@@ -2,8 +2,9 @@ import React from 'react';
 import useExtensionStore from '../store/useExtensionStore';
 import { useStore } from 'zustand';
 const diff = require('deep-diff').diff;
-import { DiffItem } from './DiffItem'
-import { diffProps } from '../../types'
+import { DiffItem } from './DiffItem';
+import { diffProps } from '../../types';
+import './DiffDisplay.scss';
 
 export const DiffDisplay = () => {
   
@@ -15,6 +16,6 @@ export const DiffDisplay = () => {
   })
 
   return (
-    <div>{diffItems}</div>
+    <div className="diff-item-container">{diffItems}</div>
   );
 };

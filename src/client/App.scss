@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  // background-color: rgba(114, 125, 153, 0.5);
+  background-color: #3a2036;
+  overflow-y: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: none;
+}
+
+#display-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}

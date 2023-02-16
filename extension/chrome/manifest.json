@@ -10,6 +10,11 @@
   "background": {
     "service_worker": "/js/background.js" 
   },
+  "icons": {
+    "16": "./icons/zukeeper_16x16.png",
+    "48": "./icons/zukeeper_48x48.png",
+    "128": "./icons/zukeeper_128x128.png"
+  },
   "content_scripts": [
     {
       "matches": [ "<all_urls>" ],
@@ -17,7 +22,7 @@
     }
   ],
   "web_accessible_resources": [{
-    "resources": ["/js/contentScript.js"],
+    "resources": ["/js/contentScript.js", "../src/client/assets/document.png", "../src/client/assets/feedback.png", "../src/client/assets/support.png"],
     "matches": ["<all_urls>"]
   }],
   "permissions": ["tabs", "activeTab", "scripting"],

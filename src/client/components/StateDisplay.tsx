@@ -1,6 +1,7 @@
 import React from 'react';
 import useExtensionStore from '../store/useExtensionStore';
 import { useStore } from 'zustand';
+import './StateDisplay.scss';
 
 
 export const StateDisplay = () => {
@@ -30,8 +31,7 @@ export const StateDisplay = () => {
 
   return (
     <>
-      <h2>Current State:</h2>
-      <div id="current-state-container">
+      <div className="current-state-container">
         {currStateDisplayResult}
       </div>
     </>
