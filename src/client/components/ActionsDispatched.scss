@@ -1,40 +1,47 @@
+@import '../Colors.scss';
+
 .actions-container {
   flex-basis: 30%;
   display: flex;
   flex-direction: column;
-  border-right: 2px double rgb(255, 255, 255);
-  background-color: #3a2036;
+  border-right: 2px single $black;
+  background-color: #ffffff;
 }
 
 .actions-input {
   text-align: left;
-  border-bottom: 1px solid white;
-  background-color: #3a2036;
-  color: white;
+  border: none;
+  border-bottom: 1px solid $black;
+  background-color: $grey;
+  color: $black;
   padding: 5px 8px; 
+}
+
+.actions-input:focus{
+  outline: none;
 }
 
 .actions-list {
   overflow-y: scroll;
   height: 100vh;
 
-  ul {
-    list-style-type: none;
-    padding-inline-start: 0;
-    // padding: 5px;
-    margin: none;
+  // ul {
+  //   list-style-type: none;
+  //   padding-inline-start: 0;
+  //   // padding: 5px;
+  //   margin: none;
 
-    li {
-      background-color: #3a2036;
-      font-size: 12px;
-      color:white;
-      border-top: solid white 1px;
-      padding: 10px 8px;
+  //   li {
+  //     background-color: $black;
+  //     font-size: 12px;
+  //     color:white;
+  //     border-top: solid $black 1px;
+  //     padding: 10px 8px;
 
-      &:first-child{
-        border: none;
-        margin: none;
-      }
-    }
-  }
+  //     &:first-child{
+  //       border: none;
+  //       margin: none;
+  //     }
+  //   }
+  // }
 }

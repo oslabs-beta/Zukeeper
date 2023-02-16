@@ -1,3 +1,5 @@
+@import '../Colors.scss';
+
 .header{
   display: flex;
   flex: none;
@@ -5,25 +7,29 @@
   align-items: center;
   height: 3rem;
   margin: 0;
-  background-color: #482432;
-  border-bottom: 2px double white;
+  background-color: $grey;
+  border-bottom: 2px double $white;
   position: relative;
 }
 
 .header-store-button{
   padding: 7px 150px;
-  border: solid 1px white;
-  background-color: #482432;
-  color:  white;
+  border: solid 1px $light-medium-grey;
+  border-radius: 5px;
+  background-color: $grey;
+  color:  $black;
+  transition-duration: 0.2s;
 
   &:hover {
-    background-color: #612f42;
-    // color: white;
+    background-color: $medium-grey;
+    color: $white;
   }
 
   &:active {
-    background-color: #612f42;
-    border: solid 2px white;
+    background-color: $medium-grey;
+    border: solid 2px $light-medium-grey;
+    border-radius: 5px;
+    color: $white;
   }
 }
 
@@ -34,5 +40,5 @@
   right: 40px;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: $white;
 }
