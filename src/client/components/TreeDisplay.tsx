@@ -5,10 +5,7 @@ import useExtensionStore from '../store/useExtensionStore';
 import { useStore } from 'zustand';
 
 export const TreeDisplay = () => {
-
   const { previousStates } = useStore(useExtensionStore);
-
-  console.log(previousStates);
 
   const stateHeirarchy: RawNodeDatum = {
     name: 'CEO',
@@ -45,7 +42,7 @@ export const TreeDisplay = () => {
       },
     ],
   };
-  
+
   return (
     <div id="treeWrapper" style={{ width: '100vw', height: '100vh' }}>
       <Tree data={stateHeirarchy} />

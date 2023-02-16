@@ -23,8 +23,6 @@ export const DiffItem = (props: diffProps) => {
     item =  <div>deleted {props.obj.lhs}</div>
   } else if (props.obj.kind === 'A'){
       if(props.obj.item.kind === 'D'){
-        console.log('propsObject',props.obj.path)
-        console.log('prevState', previousStates[previousStates.length - 2])
         item = <div>
           <div>{path}: </div>
           <div>+ Deleted array element {props.obj.item.lhs} at index {props.obj.index}</div>
