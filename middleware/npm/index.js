@@ -1,3 +1,5 @@
+import { create } from "zustand";
+
 function zukeeper(createFunction) {
   return (set, get) => {
     const store = createFunction(set, get);
@@ -5,16 +7,21 @@ function zukeeper(createFunction) {
       if (typeof store[key] === 'function') {
         let functionDefinition = store[key];
         store[key] = (...args) => {
+          let currstate = get();
+          window.postMessage({
+            body: 'Innit',
+            state: JSON.stringify(currstate)
+          });
           functionDefinition(...args);
-          const currstate = get();
+          currstate = get();
           window.postMessage({
             body: 'Data',
             state: JSON.stringify(currstate),
             actions: key,
           });
         };
-      }
-    }
+      };
+    };
     return store;
   };
 }
