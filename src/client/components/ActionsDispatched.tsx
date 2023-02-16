@@ -8,7 +8,6 @@ export const ActionsDispatched = () => {
   const { actionsDispatched }  = useStore(useExtensionStore);
  
   const actions = actionsDispatched.map((el, idx) => {
-    // return <li key={idx}>{el}</li>
     return <Action key={idx} action={el}/>
   });
 

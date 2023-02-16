@@ -7,8 +7,14 @@ import { useStore } from 'zustand';
 import './App.scss';
 
 const App = () => {
-
-  const { addPreviousState, addActionDispatched, resetState }  = useStore(useExtensionStore);
+  const {
+    addPreviousState,
+    addActionDispatched,
+    resetState,
+    setInitialState,
+    previousStates,
+    initialState,
+  } = useStore(useExtensionStore);
 
   let mainPort: any;
   let connected: boolean = false;
@@ -22,19 +28,26 @@ const App = () => {
 
     if (connected) {
       //listening for messages from background.js
-      mainPort.onMessage.addListener((message: any, sender: chrome.runtime.MessageSender, sendResponse: Function) => {
-        if (message.body === 'Data') {
-          addPreviousState(message.state);
-          addActionDispatched(message.actions);
+      mainPort.onMessage.addListener(
+        (
+          message: any,
+          sender: chrome.runtime.MessageSender,
+          sendResponse: Function
+        ) => {
+          if (message.body === 'Data') {
+            addPreviousState(message.state);
+            addActionDispatched(message.actions);
+          }
+          if (message.body === 'Innit') {
+            setInitialState(message.state);
+          }
+          if (message.body === 'Reset') {
+            resetState();
+          }
         }
-
-        if (message.body === 'Reset'){
-          console.log('got here')
-          resetState();
-        }
-      });
+      );
     }
-  }
+  };
 
   useEffect(() => {
     connect();
@@ -44,7 +57,6 @@ const App = () => {
     });
   }, []);
 
-  
   return (
     <>
       <Header />
