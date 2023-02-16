@@ -14,12 +14,16 @@ export interface Store {
   resetState: () => void
 }
 
-export interface RawNodeDatum {
-  name: string;
-  attributes?: Record<string, string | number | boolean>;
-  children?: RawNodeDatum[];
-}
+// export interface RawNodeDatum {
+//   name: string;
+//   attributes?: Record<string, string | number | boolean>;
+//   children?: RawNodeDatum[];
+// }
 
 export type diffProps = {
   obj: any
+}
+
+export type actionProps = {
+  action: string
 }

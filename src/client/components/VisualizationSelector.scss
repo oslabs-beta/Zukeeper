@@ -1,0 +1,42 @@
+.visualization-wrapper {
+  display: flex;
+  // column-gap: 1rem;
+  // padding: 0.65rem;
+  background: rgba(138, 152, 186, 0.5);
+  width: 100%;
+  border-bottom: 2px double black;
+  justify-content: end;
+  align-items: center;
+  position: relative;
+}
+
+.visualization-buttons-container {
+  margin-right: 20px;
+}
+
+.visualization-current-button {
+  position: absolute;
+  color: white;
+  left: 30px;
+  font-size: 14px;
+}
+
+.visualization-display-button {
+  padding: 0.4rem .9rem;
+  margin: 5px 0px;
+  border: 1px solid rgb(255, 255, 255);
+  cursor: pointer;
+  transition-duration: 0.2s;
+  font-size: 14px;
+  background: #3a2036;
+  color: white;
+
+  &:hover {
+    background-color: rgba(138, 152, 186, 0.5);
+    color: white;
+  }
+
+  &:active {
+    background-color: rgba(99, 109, 133, 0.5);
+  }
+}
