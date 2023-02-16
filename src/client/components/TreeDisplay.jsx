@@ -44,11 +44,11 @@ export const TreeDisplay = () => {
   const renderForeignObjectNode = ({ nodeDatum, toggleNode }) => (
     <g>
       <circle r={10} onClick={toggleNode}></circle>
-      <text fill="white" stroke="white" strokeWidth="1" y='4' x={nodeDatum.children? "-13" : "13"} textAnchor={nodeDatum.children? "end" : "start"}>
+      <text fill="black" stroke="black" strokeWidth="1" y='4' x={nodeDatum.children? "-13" : "13"} textAnchor={nodeDatum.children? "end" : "start"}>
         {nodeDatum.name}
       </text>
       {nodeDatum.attributes &&
-        (<text fill="white" stroke="white" strokeWidth="1" x="20" dy="20" >
+        (<text fill="black" stroke="black" strokeWidth="1" x="20" dy="20" >
           value: {nodeDatum.attributes.value}
         </text>
         )}

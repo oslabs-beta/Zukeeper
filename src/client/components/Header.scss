@@ -12,7 +12,8 @@
   position: relative;
 }
 
-.header-store-button{
+.header-store-button {
+  position: relative;
   padding: 7px 150px;
   border: solid 1px $light-medium-grey;
   border-radius: 5px;
@@ -31,13 +32,20 @@
     border-radius: 5px;
     color: $white;
   }
+
+  .arrow-down {
+    position: absolute;
+    right: 20px;
+    top: 3px;
+  }
+
 }
 
 .header-image-container {
   position: absolute;
   display: flex;
-  width: 60px;
-  right: 40px;
+  width: 100px;
+  right: 20px;
   justify-content: space-between;
   align-items: center;
   color: $white;
