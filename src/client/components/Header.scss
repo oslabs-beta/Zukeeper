@@ -1,0 +1,38 @@
+.header{
+  display: flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  margin: 0;
+  background-color: #482432;
+  border-bottom: 2px double white;
+  position: relative;
+}
+
+.header-store-button{
+  padding: 7px 150px;
+  border: solid 1px white;
+  background-color: #482432;
+  color:  white;
+
+  &:hover {
+    background-color: #612f42;
+    // color: white;
+  }
+
+  &:active {
+    background-color: #612f42;
+    border: solid 2px white;
+  }
+}
+
+.header-image-container {
+  position: absolute;
+  display: flex;
+  width: 60px;
+  right: 40px;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
