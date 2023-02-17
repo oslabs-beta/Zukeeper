@@ -1,7 +1,8 @@
 import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware'
 import { Store } from '../../types/types';
 
-const useExtensionStore = create<Store>()((set, get) => ({
+const useExtensionStore = create<Store>()(persist<Store>((set, get) => ({
   // State and Reducer Logic for our Extension
   displayState: true,
   displayDiff: false,
@@ -51,6 +52,10 @@ const useExtensionStore = create<Store>()((set, get) => ({
       actionsDispatched: [],
     }));
   },
+}),
+{
+  name: 'zukeeper-storage', // unique name
+  storage: createJSONStorage(() => sessionStorage),
 }));
 
 export default useExtensionStore;
