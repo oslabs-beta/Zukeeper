@@ -33,7 +33,8 @@
   "permissions": [
     "tabs", 
     "activeTab", 
-    "scripting"
+    "scripting",
+    "storage"
   ],
   "host_permissions": ["<all_urls>"], 
   "externally_connectable": {
