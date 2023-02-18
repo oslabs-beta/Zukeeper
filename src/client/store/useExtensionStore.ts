@@ -1,7 +1,8 @@
 import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware'
 import { Store } from '../../types/types';
 
-const useExtensionStore = create<Store>()((set, get) => ({
+const useExtensionStore = create<Store>()(persist<Store>((set, get) => ({
   // State and Reducer Logic for our Extension
   displayState: true,
   displayDiff: false,
@@ -21,6 +22,34 @@ const useExtensionStore = create<Store>()((set, get) => ({
       displayDiff: true,
     }),
 
+  actionIndex: null,
+  setActionIndex: (idx) => {
+    set((state) => ({
+      actionIndex: idx,
+    }));
+  },
+
+  currState: {},
+  setCurrState: (idx) => {
+    set((state) => ({
+      currState: state.previousStates[idx + 1],
+    }));
+  },
+
+  prevState: {},
+  setPrevState: (idx) => {
+    set((state) => ({
+      prevState: state.previousStates[idx + 1],
+    }));
+  },
+
+  filter: '',
+  setFilter: (string) => {
+    set((state) => ({
+      filter: string
+    }));
+  },
+
   // State and Reducer Logic for the Zustand Application
   initialState: '',
   setInitialState: (snapshot) => {
@@ -32,6 +61,7 @@ const useExtensionStore = create<Store>()((set, get) => ({
     state.addPreviousState(snapshot);
     };
   },
+  
   previousStates: [],
   addPreviousState: (snapshot) => {
     set((state) => ({
@@ -51,6 +81,10 @@ const useExtensionStore = create<Store>()((set, get) => ({
       actionsDispatched: [],
     }));
   },
+}),
+{
+  name: 'zukeeper-storage', // unique name
+  storage: createJSONStorage(() => sessionStorage),
 }));
 
 export default useExtensionStore;

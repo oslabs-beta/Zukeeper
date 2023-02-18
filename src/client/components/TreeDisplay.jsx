@@ -6,7 +6,7 @@ import './TreeDisplay.scss'
 
 export const TreeDisplay = () => {
 
-  const { previousStates } = useStore(useExtensionStore);
+  const { previousStates, currState} = useStore(useExtensionStore);
 
   const childrenGen = (array, key) => {
     const children = [];
@@ -39,7 +39,12 @@ export const TreeDisplay = () => {
     return hierarchyObj
   }
 
-  const stateHeirarchy = HierarchyConvert(previousStates[previousStates.length - 1])
+  let stateHeirarchy;
+  if(Object.keys(currState).length > 0){
+    stateHeirarchy = HierarchyConvert(currState)
+  } else {
+    stateHeirarchy = HierarchyConvert(previousStates[previousStates.length - 1])
+  }
 
   const renderForeignObjectNode = ({ nodeDatum, toggleNode }) => (
     <g>
