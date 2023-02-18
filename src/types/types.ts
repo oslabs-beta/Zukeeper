@@ -5,8 +5,18 @@ export interface Store {
   showTree: () => void,
   showDiff: () => void,
 
+  actionIndex: number | null, 
+  setActionIndex: (snapshot: number) => void,
+
+  currState: any,
+  setCurrState: (snapshot: number) => void,
+
+  prevState: any,
+  setPrevState: (snapshot: number) => void,
+
   initialState: string,
   setInitialState: (snapshot: string) => void,
+
   previousStates: string[],
   addPreviousState: (snapshot: string) => void,
 
@@ -18,9 +28,11 @@ export interface Store {
 
 export type diffProps = {
   obj: any
+  action: boolean
 }
 
 export type actionProps = {
   action: string
+  idx: number
 }
 
