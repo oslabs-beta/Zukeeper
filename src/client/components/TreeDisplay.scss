@@ -1,15 +1,15 @@
 @import '../Colors.scss';
 
 .node__root  circle {
-  fill: $medium-grey;
-  stroke:$medium-grey;
+  fill: $red;
+  stroke:$red;
   stroke-width: 2px;
   r: 10;
 }
 
 .node__branch  circle {
-  fill: $medium-grey;
-  stroke:$medium-grey;
+  fill: $pink;
+  stroke: $pink;
   stroke-width: 2px;
   r: 10;
 }

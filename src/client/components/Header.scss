@@ -8,7 +8,7 @@
   height: 3rem;
   margin: 0;
   background-color: $grey;
-  border-bottom: 2px double $white;
+  border-bottom: 1px solid $black;
   position: relative;
 }
 
@@ -21,23 +21,36 @@
   color:  $black;
   transition-duration: 0.2s;
 
+  .arrow-down {
+    position: absolute;
+    fill: $black;
+    stroke: $black;
+    right: 20px;
+    top: 3px;
+
+  }
   &:hover {
     background-color: $medium-grey;
     color: $white;
-  }
 
+    .arrow-down{
+      fill: $white;
+      stroke: $white;   
+    }
+  }
+  
   &:active {
     background-color: $medium-grey;
     border: solid 2px $light-medium-grey;
     border-radius: 5px;
     color: $white;
+    
+    .arrow-down{
+      fill: $white;
+      stroke: $white;   
+    }
   }
 
-  .arrow-down {
-    position: absolute;
-    right: 20px;
-    top: 3px;
-  }
 
 }
 
@@ -48,5 +61,13 @@
   right: 20px;
   justify-content: space-between;
   align-items: center;
-  color: $white;
+
+  .icon{
+    color: $black;
+    transition-duration: 0.2s;
+    
+    &:hover, &:active{
+      fill: $white;
+    }
+  }
 }
