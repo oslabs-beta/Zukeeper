@@ -5,7 +5,7 @@ import { useStore } from 'zustand';
 import './DiffItem.scss';
 
 export const DiffItem = (props: diffProps) => {
-  const { previousStates } = useStore(useExtensionStore);
+  const { previousStates, currState, prevState } = useStore(useExtensionStore);
 
   let path: string = '';
   for (let element of props.obj.path){
@@ -36,12 +36,20 @@ export const DiffItem = (props: diffProps) => {
           </div>
       } 
       else if (props.obj.item.kind === 'N') {
-        item = 
+        if (props.action){
+          item = <div className="diff-item">
+                    <div>{path}: </div>
+                    <div>+ Added array element {props.obj.item.rhs} at index {props.obj.index}</div>
+                    <div>+ {JSON.stringify(prevState[props.obj.path]).replaceAll(/,/g, ', ').replaceAll(/:/g, ': ')} {'=>'} {JSON.stringify(currState[props.obj.path]).replaceAll(/,/g, ', ').replaceAll(/:/g, ': ')}</div>
+                  </div>
+        } else {
+          item = 
           <div className="diff-item">
             <div>{path}: </div>
             <div>+ Added array element {props.obj.item.rhs} at index {props.obj.index}</div>
             <div>+ {JSON.stringify(previousStates[previousStates.length - 2][props.obj.path]).replaceAll(/,/g, ', ').replaceAll(/:/g, ': ')} {'=>'} {JSON.stringify(previousStates[previousStates.length - 1][props.obj.path]).replaceAll(/,/g, ', ').replaceAll(/:/g, ': ')}</div>
           </div>
+        }
       } 
   }
 

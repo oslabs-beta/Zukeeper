@@ -22,6 +22,27 @@ const useExtensionStore = create<Store>()(persist<Store>((set, get) => ({
       displayDiff: true,
     }),
 
+  actionIndex: null,
+  setActionIndex: (idx) => {
+    set((state) => ({
+      actionIndex: idx,
+    }));
+  },
+
+  currState: {},
+  setCurrState: (idx) => {
+    set((state) => ({
+      currState: state.previousStates[idx + 1],
+    }));
+  },
+
+  prevState: {},
+  setPrevState: (idx) => {
+    set((state) => ({
+      prevState: state.previousStates[idx + 1],
+    }));
+  },
+
   // State and Reducer Logic for the Zustand Application
   initialState: '',
   setInitialState: (snapshot) => {
@@ -33,6 +54,7 @@ const useExtensionStore = create<Store>()(persist<Store>((set, get) => ({
     state.addPreviousState(snapshot);
     };
   },
+  
   previousStates: [],
   addPreviousState: (snapshot) => {
     set((state) => ({

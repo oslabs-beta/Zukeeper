@@ -15,6 +15,15 @@
   padding: 10px 8px;
   width: 100%;
   text-align:left;
+
+  &:hover {
+    background-color: $medium-grey;
+    color: $white;
+  }
+
+  &:active {
+    background-color: $medium-grey;
+  }
 }
 
 .action-small-button {

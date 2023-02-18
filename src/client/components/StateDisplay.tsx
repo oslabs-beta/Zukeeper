@@ -5,33 +5,27 @@ import './StateDisplay.scss';
 
 export const StateDisplay = () => {
   // grabbing all previous states from our store
-  const { previousStates } = useStore(useExtensionStore);
-
+  const { previousStates, actionIndex } = useStore(useExtensionStore);
+  
+  let currState: any
   // determine if there is an non-undefined value for the current state - which should be the last element of the array
   // if yes, grab that value, if no, return an empty array
-  const currState: (string | never[]) = (previousStates[previousStates.length - 1] ? previousStates[previousStates.length - 1] : [])
+  if (actionIndex !== null) {
+    currState =  previousStates[actionIndex + 1];
+  } else {
+    currState = previousStates[previousStates.length - 1] ? previousStates[previousStates.length - 1] : []
+  }
   const currStateArr: JSX.Element[] = [];
 
-  // helper function to produce an array of JSX elements containing current state properties and their values
-  const currStateDisplay = (currState: any): JSX.Element[] => {
-    const currStateProperties: string[] = Object.keys(currState);
-
-    for (let i: number = 0; i < currStateProperties.length; i += 1) {
-      let value: string = JSON.stringify(currState[currStateProperties[i]]);
-      value = value.replaceAll(/,/g, ', ').replaceAll(/:/g, ': ');
-      currStateArr.push(<p className="current-state-values" key={i}>{currStateProperties[i]}: {value}</p>)
-    }
-
-    return currStateArr;
-  };
-
-  // invoke our helper function and save results into a constant to be rendered below
-  const currStateDisplayResult: JSX.Element[] = currStateDisplay(currState);
+  for (let key in currState){
+    const value = JSON.stringify(currState[key]).replaceAll(/,/g, ', ').replaceAll(/:/g, ': ');
+    currStateArr.push(<div className="current-state-item" key={key} >{key}: {value}</div>);
+  }
 
   return (
     <>
       <div className="current-state-container">
-        {currStateDisplayResult}
+        {currStateArr}
       </div>
     </>
   );
