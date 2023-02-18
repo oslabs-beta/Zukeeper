@@ -5,15 +5,24 @@ import { Action } from './Action'
 import './ActionsDispatched.scss'
 
 export const ActionsDispatched = () => {
-  const { actionsDispatched }  = useStore(useExtensionStore);
+  const { actionsDispatched, filter, setFilter }  = useStore(useExtensionStore);
+
+
+  const inputHandler = (event) => {
+    setFilter(event.target.value);
+  }
  
-  const actions = actionsDispatched.map((el, idx) => {
-    return <Action key={idx} action={el} idx={idx}/>
-  });
+  const actions = actionsDispatched
+    .filter(action => {
+      return action.toLowerCase().startsWith(filter.toLowerCase());
+    })
+    .map((el, idx) => {
+      return <Action key={idx} action={el} idx={idx}/>
+    });
 
   return(
     <div className="actions-container">
-      <input className="actions-input" type="text" placeholder='filter actions...' autoFocus/>
+      <input className="actions-input" type="text" placeholder='filter actions...' autoFocus onChange={inputHandler}/>
       <div className="actions-list">
         {actions}
       </div>

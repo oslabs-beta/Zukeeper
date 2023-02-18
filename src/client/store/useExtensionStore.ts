@@ -43,6 +43,13 @@ const useExtensionStore = create<Store>()(persist<Store>((set, get) => ({
     }));
   },
 
+  filter: '',
+  setFilter: (string) => {
+    set((state) => ({
+      filter: string
+    }));
+  },
+
   // State and Reducer Logic for the Zustand Application
   initialState: '',
   setInitialState: (snapshot) => {

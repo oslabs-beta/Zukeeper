@@ -5,14 +5,13 @@ import { useStore } from 'zustand';
 import './Action.scss'
 
 export const Action = (props: actionProps) => {
-  const { setActionIndex, actionIndex, setCurrState, setPrevState, currState, prevState } = useStore(useExtensionStore);
+  const { setActionIndex, actionIndex, setCurrState, setPrevState } = useStore(useExtensionStore);
 
   const stateChangeHandler = () => {
-    setActionIndex(props.idx)
-    setCurrState(props.idx)
+    setActionIndex(props.idx);
+    setCurrState(props.idx);
     setPrevState(props.idx - 1);
-    console.log('current states', currState, prevState)
-  }
+    }
 
 
   return(

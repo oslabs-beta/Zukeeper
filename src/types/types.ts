@@ -14,6 +14,9 @@ export interface Store {
   prevState: any,
   setPrevState: (snapshot: number) => void,
 
+  filter: string;
+  setFilter: (snapshot: string) => void,
+
   initialState: string,
   setInitialState: (snapshot: string) => void,
 
