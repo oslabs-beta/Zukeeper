@@ -1,14 +1,15 @@
+@import '../Colors.scss';
+
 .current-state-container {
   overflow-y: scroll;
   height: 18rem;
-  // margin-top: 40px;
   margin: 40px;
 }
 
-.current-state-values {
-  margin: 0;
-  border: 1px solid white;
+.current-state-item {
+  margin: 5px;
+  border: 1px solid $light-medium-grey;
   padding: 1rem 0.5rem;
   border-radius: 2px;
-  color: white;
+  color: $black;
 }

@@ -1,33 +1,30 @@
+@import '../Colors.scss';
+
 .node__root  circle {
-  fill:  steelblue;
-  stroke: rgb(255, 255, 255);
+  fill: $red;
+  stroke:$red;
   stroke-width: 2px;
   r: 10;
 }
 
 .node__branch  circle {
-  fill:  steelblue;
-  stroke: rgb(255, 255, 255);
+  fill: $pink;
+  stroke: $pink;
   stroke-width: 2px;
   r: 10;
 }
 
 .node__leaf  circle {
-  fill: #fff;
-  stroke: steelblue;
+  fill:  $white;
+  stroke: $medium-grey;
   stroke-width: 2px;
   r: 10;
 }
 
 .node__root text, .node__branch text, .node__leaf text{
   text-shadow:
-  -1px -1px 3px  #3a2036,
-  -1px  1px 3px  #3a2036,
-   1px -1px 3px #3a2036,
-   1px  1px 3px  #3a2036,
+  -1px -1px 3px $white,
+  -1px  1px 3px  $white,
+   1px -1px 3px $white,
+   1px  1px 3px  $white,
 }
-
-
-// #ffb029
-// #3f5058
- 

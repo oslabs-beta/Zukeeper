@@ -1,6 +1,8 @@
+@import '../Colors.scss';
+
 #visualization-container {
   flex-basis: 70%;
-  border-left: 2px double black;
+  border-left: 2px double $black;
 }
 
 #display-space {

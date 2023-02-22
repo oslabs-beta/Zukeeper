@@ -1,3 +1,5 @@
+@import '../Colors.scss';
+
 .action-button-container {
   display: flex;
   position: relative;
@@ -5,22 +7,52 @@
 }
 
 .action-large-button {
-  background-color: #3a2036;
+  background-color: $white;
   font-size: 12px;
-  color:white;
+  color: $black;
   border: none;
-  border-top: solid white 1px;
+  border-bottom: solid $black 1px;
   padding: 10px 8px;
   width: 100%;
   text-align:left;
+  transition-duration: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $medium-grey;
+    color: $white;
+  }
 }
 
 .action-small-button {
   position: absolute;
   right: 12px; 
   top: 7px;
-  border: solid 1px white;
-  color: white;
-  background-color: #3a2036;
-  border-radius: 2px;
+  border: solid 1px $grey;
+  border: 1px solid $light-medium-grey;
+  border-radius: 5px;
+  color: $black;
+  background-color: $grey;
+  cursor: pointer;
+  transition-duration: 0.2s;
+
+  &:hover {
+    background-color: $red;
+    color: $white;
+  }
+}
+
+.action-small-button-color {
+  background-color: $red;
+  color: $white;
+}
+
+.action-large-button-color-timetravel {
+  background-color: $pink;
+  color: $black;
+}
+
+.action-large-button-color {
+  background: $medium-grey;
+  color: $white;
 }

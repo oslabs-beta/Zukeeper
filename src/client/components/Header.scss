@@ -1,3 +1,5 @@
+@import '../Colors.scss';
+
 .header{
   display: flex;
   flex: none;
@@ -5,34 +7,67 @@
   align-items: center;
   height: 3rem;
   margin: 0;
-  background-color: #482432;
-  border-bottom: 2px double white;
+  background-color: $grey;
+  border-bottom: 1px solid $black;
   position: relative;
 }
 
-.header-store-button{
+.header-store-button {
+  position: relative;
   padding: 7px 150px;
-  border: solid 1px white;
-  background-color: #482432;
-  color:  white;
+  border: solid 1px $light-medium-grey;
+  border-radius: 5px;
+  background-color: $grey;
+  color:  $black;
+  transition-duration: 0.2s;
 
+  .arrow-down {
+    position: absolute;
+    fill: $black;
+    stroke: $black;
+    right: 20px;
+    top: 3px;
+
+  }
   &:hover {
-    background-color: #612f42;
-    // color: white;
+    background-color: $medium-grey;
+    color: $white;
+
+    .arrow-down{
+      fill: $white;
+      stroke: $white;   
+    }
+  }
+  
+  &:active {
+    background-color: $medium-grey;
+    border: solid 2px $light-medium-grey;
+    border-radius: 5px;
+    color: $white;
+    
+    .arrow-down{
+      fill: $white;
+      stroke: $white;   
+    }
   }
 
-  &:active {
-    background-color: #612f42;
-    border: solid 2px white;
-  }
+
 }
 
 .header-image-container {
   position: absolute;
   display: flex;
-  width: 60px;
-  right: 40px;
+  width: 100px;
+  right: 20px;
   justify-content: space-between;
   align-items: center;
-  color: white;
+
+  .icon{
+    color: $black;
+    transition-duration: 0.2s;
+    
+    &:hover, &:active{
+      fill: $white;
+    }
+  }
 }

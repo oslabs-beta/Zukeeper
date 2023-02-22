@@ -1,7 +1,8 @@
 import { create } from 'zustand';
-import { Store } from '../../types';
+import { persist, createJSONStorage } from 'zustand/middleware'
+import { Store } from '../../types/types';
 
-const useExtensionStore = create<Store>()((set, get) => ({
+const useExtensionStore = create<Store>()(persist<Store>((set, get) => ({
   // State and Reducer Logic for our Extension
   displayState: true,
   displayDiff: false,
@@ -21,13 +22,62 @@ const useExtensionStore = create<Store>()((set, get) => ({
       displayDiff: true,
     }),
 
+  actionIndex: null,
+  setActionIndex: (idx) => {
+    set((state) => ({
+      actionIndex: idx,
+    }));
+  },
+
+  currState: {},
+  setCurrState: (idx) => {
+    set((state) => ({
+      currState: state.previousStates[idx + 1],
+    }));
+  },
+
+  prevState: {},
+  setPrevState: (idx) => {
+    set((state) => ({
+      prevState: state.previousStates[idx + 1],
+    }));
+  },
+
+  filter: '',
+  setFilter: (string) => {
+    set((state) => ({
+      filter: string
+    }));
+  },
+
+  timeTravel: false,
+  setTimeTravel: (bool) => {
+    set((state) => ({
+      timeTravel: bool
+    }));
+  },
+
+  highlightTime: [],
+  setHighlightTime: (bool, idx1, idx2) => {
+    if (bool) {
+      set((state) => ({
+        highlightTime: [idx1, idx2]
+      }));
+    }
+  },
+
   // State and Reducer Logic for the Zustand Application
   initialState: '',
   setInitialState: (snapshot) => {
-    set({
-      initialState: snapshot,
-    });
+    const state = get();
+    if (state.initialState.length === 0) {
+      set((state) => ({
+        initialState: snapshot,
+      }));
+    state.addPreviousState(snapshot);
+    };
   },
+  
   previousStates: [],
   addPreviousState: (snapshot) => {
     set((state) => ({
@@ -47,6 +97,10 @@ const useExtensionStore = create<Store>()((set, get) => ({
       actionsDispatched: [],
     }));
   },
+}),
+{
+  name: 'zukeeper-storage', // unique name
+  storage: createJSONStorage(() => sessionStorage),
 }));
 
 export default useExtensionStore;

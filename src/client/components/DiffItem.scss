@@ -1,7 +1,9 @@
+@import '../Colors.scss';
+
 .diff-item {
-  color:white;
-  margin: 0;
-  border: 1px solid white;
+  color: $black;
+  margin: 5px;
+  border: 1px solid $light-medium-grey;
   padding: 1rem 0.5rem;
   border-radius: 2px;
 }
