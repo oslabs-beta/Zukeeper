@@ -17,8 +17,9 @@ export const ActionsDispatched = () => {
       return action.toLowerCase().startsWith(filter.toLowerCase());
     })
     .map((el, idx) => {
-      return <Action key={idx} action={el} idx={idx}/>
+      return <Action key={idx} action={el} idx={idx} length={actionsDispatched.length}/>
     });
+
 
   return(
     <div className="actions-container">

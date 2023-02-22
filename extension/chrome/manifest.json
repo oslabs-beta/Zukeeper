@@ -23,6 +23,7 @@
   ],
   "web_accessible_resources": [{
     "resources": [
+      "/js/injectedScript.js",
       "/js/contentScript.js", 
       "../src/client/assets/document.png", 
       "../src/client/assets/feedback.png", 

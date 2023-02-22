@@ -14,8 +14,15 @@ export interface Store {
   prevState: any,
   setPrevState: (snapshot: number) => void,
 
-  filter: string;
+  filter: string,
   setFilter: (snapshot: string) => void,
+
+  timeTravel: boolean,
+  setTimeTravel: (snapshot: boolean) => void,
+
+  highlightTime: number[],
+  setHighlightTime: (bool: boolean, idx1: number, idx2: number) => void,
+
 
   initialState: string,
   setInitialState: (snapshot: string) => void,
@@ -37,5 +44,6 @@ export type diffProps = {
 export type actionProps = {
   action: string
   idx: number
+  length: number
 }
 

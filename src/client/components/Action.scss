@@ -15,14 +15,12 @@
   padding: 10px 8px;
   width: 100%;
   text-align:left;
+  transition-duration: 0.2s;
+  cursor: pointer;
 
   &:hover {
     background-color: $medium-grey;
     color: $white;
-  }
-
-  &:active {
-    background-color: $medium-grey;
   }
 }
 
@@ -31,7 +29,30 @@
   right: 12px; 
   top: 7px;
   border: solid 1px $grey;
-  border-radius: 15px;
+  border: 1px solid $light-medium-grey;
+  border-radius: 5px;
   color: $black;
   background-color: $grey;
+  cursor: pointer;
+  transition-duration: 0.2s;
+
+  &:hover {
+    background-color: $red;
+    color: $white;
+  }
+}
+
+.action-small-button-color {
+  background-color: $red;
+  color: $white;
+}
+
+.action-large-button-color-timetravel {
+  background-color: $pink;
+  color: $black;
+}
+
+.action-large-button-color {
+  background: $medium-grey;
+  color: $white;
 }

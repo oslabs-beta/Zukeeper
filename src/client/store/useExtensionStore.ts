@@ -50,6 +50,22 @@ const useExtensionStore = create<Store>()(persist<Store>((set, get) => ({
     }));
   },
 
+  timeTravel: false,
+  setTimeTravel: (bool) => {
+    set((state) => ({
+      timeTravel: bool
+    }));
+  },
+
+  highlightTime: [],
+  setHighlightTime: (bool, idx1, idx2) => {
+    if (bool) {
+      set((state) => ({
+        highlightTime: [idx1, idx2]
+      }));
+    }
+  },
+
   // State and Reducer Logic for the Zustand Application
   initialState: '',
   setInitialState: (snapshot) => {

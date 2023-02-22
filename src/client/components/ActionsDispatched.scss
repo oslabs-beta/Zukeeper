@@ -23,5 +23,5 @@
 
 .actions-list {
   overflow-y: scroll;
-  height: 100vh;
+  height: calc(100vh - 75px);
 }

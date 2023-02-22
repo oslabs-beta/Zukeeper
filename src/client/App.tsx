@@ -6,56 +6,63 @@ import useExtensionStore from './store/useExtensionStore';
 import { useStore } from 'zustand';
 import './App.scss';
 
+let port;
+
 const App = () => {
   const {
     addPreviousState,
     addActionDispatched,
     resetState,
     setInitialState,
-    previousStates,
-    initialState,
+    currState,
+    timeTravel,
+    setTimeTravel,
   } = useStore(useExtensionStore);
 
-  let mainPort: any;
-  let connected: boolean = false;
-
+  // let connected: boolean = false;
+  console.log('rerender')
   const connect = (): void => {
-    //connects devtool to inspected page
-    if (!connected) {
-      mainPort = chrome.runtime.connect();
-      connected = true;
-    }
-
-    if (connected) {
-      //listening for messages from background.js
-      mainPort.onMessage.addListener(
-        (
-          message: any,
-          sender: chrome.runtime.MessageSender,
-          sendResponse: Function
-        ) => {
-          if (message.body === 'Data') {
-            addPreviousState(message.state);
-            addActionDispatched(message.actions);
-          }
-          if (message.body === 'Innit') {
-            setInitialState(message.state);
-          }
-          if (message.body === 'Reset') {
-            resetState();
-          }
+    port = chrome.runtime.connect();
+    // connected = true;
+    port.onMessage.addListener(
+      (
+        message: any,
+        sender: chrome.runtime.MessageSender,
+        sendResponse: Function
+      ) => {
+        if (message.body === 'Data') {
+          addPreviousState(message.state);
+          addActionDispatched(message.actions);
         }
-      );
-    }
-  };
+        if (message.body === 'Innit') {
+          setInitialState(message.state);
+        }
+        if (message.body === 'Reset') {
+          resetState();
+        }
+      }
+    );
+  }
 
   useEffect(() => {
     connect();
-    //disconnects port when user leaves the dev
+    //disconnects port when user leaves the dev -- double check this
     window.addEventListener('beforeunload', () => {
-      mainPort.disconnect();
+      port.disconnect();
     });
   }, []);
+
+
+  useEffect(() => {
+      console.log('port', port)
+      if (timeTravel){
+        port.postMessage({
+          body: 'TimeTravel',
+          TimeTravel: currState,
+        });
+        setTimeTravel(false);
+      }
+  }, [timeTravel]);
 
   return (
     <>
