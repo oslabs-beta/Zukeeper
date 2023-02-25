@@ -2,48 +2,19 @@ import React from 'react';
 import Tree from 'react-d3-tree';
 import useExtensionStore from '../store/useExtensionStore';
 import { useStore } from 'zustand';
+import hierarchyConv from '../algorithms/hierarchyConv';
 import './TreeDisplay.scss'
+
 
 export const TreeDisplay = () => {
 
   const { previousStates, currState} = useStore(useExtensionStore);
 
-  const childrenGen = (array, key) => {
-    const children = [];
-    for (let i = 0; i < array.length; i += 1) {
-        if (Array.isArray(array[i]))
-          children = children.concat(array[i].childrenGen());
-        else
-          children.push({name: `${key} [${i}]`, attributes: {value: array[i]}});
-    }
-    return children;
-  };
-
-  const HierarchyConvert = (obj) => {
-    const hierarchyObj = {
-      name: 'state',
-      children: [],
-    };
-  
-    for (const key in obj){
-      if (typeof (obj[key]) !== 'object' && !Array.isArray(obj[key]))
-        // attribute needs to be conditially added
-        hierarchyObj.children.push({name: key, attributes: {value: obj[key]}});
-      else if (Array.isArray(obj[key])) {
-        const children = childrenGen(obj[key], key);
-        hierarchyObj.children.push({name: key, children: children});
-      } 
-      else
-        hierarchyObj.children.push({name: key, attributes: {value: obj[key]}});
-    }
-    return hierarchyObj
-  }
-
   let stateHeirarchy;
   if(Object.keys(currState).length > 0){
-    stateHeirarchy = HierarchyConvert(currState)
+    stateHeirarchy = hierarchyConv(currState)
   } else {
-    stateHeirarchy = HierarchyConvert(previousStates[previousStates.length - 1])
+    stateHeirarchy = hierarchyConv(previousStates[previousStates.length - 1])
   }
 
   const renderForeignObjectNode = ({ nodeDatum, toggleNode }) => (
@@ -60,7 +31,6 @@ export const TreeDisplay = () => {
     </g>
   );
 
-  
   return (
     <div id="treeWrapper" style={{ width: '100%', height: '100vh' }}>
       <Tree data={stateHeirarchy} 

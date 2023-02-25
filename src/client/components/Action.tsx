@@ -5,7 +5,7 @@ import { useStore } from 'zustand';
 import './Action.scss'
 
 export const Action = (props: actionProps) => {
-  const { setActionIndex, actionIndex, setCurrState, setPrevState, setTimeTravel, timeTravel, highlightTime, setHighlightTime } = useStore(useExtensionStore);
+  const { setActionIndex, actionIndex, setCurrState, setPrevState, setTimeTravel, highlightTime, setHighlightTime } = useStore(useExtensionStore);
 
   const stateChangeHandler = (bool) => {
     setActionIndex(props.idx);
