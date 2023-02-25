@@ -46,25 +46,21 @@ export const TreeDisplay = () => {
   );
 
   return (
-    <div
-      id="treeWrapper"
-      style={{ width: "100%", height: "100vh" }}
-    >
-      <Tree
-        data={stateHeirarchy}
-        rootNodeClassName="node__root"
-        branchNodeClassName="node__branch"
-        leafNodeClassName="node__leaf"
-        depthFactor={180}
-        enableLegacyTransitions={true}
-        transitionDuration={750}
-        separation={{ siblings: 0.3, nonSiblings: 1 }}
-        translate={{ x: 100, y: 350 }}
-        scaleExtent={{ max: 2, min: 0.5 }}
-        nodeSize={{ x: 200, y: 200 }}
-        renderCustomNodeElement={(rd3tProps) =>
-          renderForeignObjectNode({ ...rd3tProps })
-        }
+    <div id="treeWrapper" style={{ width: '100%', height: '100vh' }}>
+      <Tree data={stateHeirarchy} 
+      rootNodeClassName="node__root"
+      branchNodeClassName="node__branch"
+      leafNodeClassName="node__leaf"
+      depthFactor={180}
+      enableLegacyTransitions={true}
+      transitionDuration={750}
+      separation={{ siblings: .2, nonSiblings: .5 }}
+      translate={{ x: 100, y: 350 }}
+      scaleExtent={{ max: 1, min: .1 }}
+      nodeSize={{ x: 200, y: 200 }}
+      renderCustomNodeElement={rd3tProps =>
+        renderForeignObjectNode({ ...rd3tProps })
+      }
       />
     </div>
   );
