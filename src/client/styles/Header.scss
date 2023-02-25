@@ -2,24 +2,23 @@
 
 .header{
   display: flex;
-  flex: none;
   justify-content: center;
   align-items: center;
   height: 3rem;
-  margin: 0;
   background-color: $grey;
   border-bottom: 1px solid $black;
-  position: relative;
 }
 
-.header-store-button {
-  position: relative;
-  padding: 7px 150px;
+.header-store{
+  padding: 0.5rem 8rem;
   border: solid 1px $light-medium-grey;
   border-radius: 5px;
   background-color: $grey;
-  color:  $black;
-  transition-duration: 0.2s;
+  font-size: 1rem;
+
+  h1 {
+    margin: 0;
+  }
 }
 
 .header-image-container {
