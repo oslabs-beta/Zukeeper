@@ -1,4 +1,4 @@
-@import '../Colors.scss';
+@import './Colors.scss';
 
 .header{
   display: flex;
@@ -20,38 +20,6 @@
   background-color: $grey;
   color:  $black;
   transition-duration: 0.2s;
-
-  .arrow-down {
-    position: absolute;
-    fill: $black;
-    stroke: $black;
-    right: 20px;
-    top: 3px;
-
-  }
-  &:hover {
-    background-color: $medium-grey;
-    color: $white;
-
-    .arrow-down{
-      fill: $white;
-      stroke: $white;   
-    }
-  }
-  
-  &:active {
-    background-color: $medium-grey;
-    border: solid 2px $light-medium-grey;
-    border-radius: 5px;
-    color: $white;
-    
-    .arrow-down{
-      fill: $white;
-      stroke: $white;   
-    }
-  }
-
-
 }
 
 .header-image-container {
