@@ -40,9 +40,9 @@ export const TreeDisplay = () => {
       depthFactor={180}
       enableLegacyTransitions={true}
       transitionDuration={750}
-      separation={{ siblings: .3, nonSiblings: 1 }}
+      separation={{ siblings: .2, nonSiblings: .5 }}
       translate={{ x: 100, y: 350 }}
-      scaleExtent={{ max: 2, min: .5 }}
+      scaleExtent={{ max: 1, min: .1 }}
       nodeSize={{ x: 200, y: 200 }}
       renderCustomNodeElement={rd3tProps =>
         renderForeignObjectNode({ ...rd3tProps })
