@@ -3,22 +3,18 @@
 .visualization-wrapper {
   display: flex;
   background: $grey;
-  width: 100%;
   border-bottom: 2px double $black;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
-}
-
-.visualization-buttons-container {
-  margin-right: 20px;
 }
 
 .visualization-current-button {
-  position: absolute;
-  color: $black;
-  left: 30px;
-  font-size: 14px;
+  font-size: 1rem;
+}
+
+.visualization-buttons-container {
+  margin-right: 1rem;
+  flex: none;
 }
 
 .visualization-display-button {
