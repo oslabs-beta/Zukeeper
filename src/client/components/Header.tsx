@@ -5,6 +5,7 @@ import './Header.scss';
 export const Header = () => {
   return (
     <header className="header">
+      <button>fucking dark mode</button>
       {/* add drop down image inside button */}
       <button className="header-store-button">
         Zustand Store
