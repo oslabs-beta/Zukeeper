@@ -66,6 +66,25 @@ const useExtensionStore = create<Store>()(persist<Store>((set, get) => ({
     }
   },
 
+  // Dark Mode
+  isDarkMode: false,
+  toggleDarkMode: (isDarkMode) =>
+    set({
+      isDarkMode: !isDarkMode,
+    }),
+  applyTheme: (isDarkMode) => {
+    const elements = document.getElementsByTagName('body')[0].getElementsByTagName('*');
+    for (let i = 0; i < elements.length; i++) {
+      console.log(elements[i]);
+      if (isDarkMode) {
+        elements[i].classList.add('dark-theme');
+        elements[i].classList.remove('light-theme');
+      } else {
+        elements[i].classList.add('light-theme');
+        elements[i].classList.remove('dark-theme');
+      }
+    }
+  },
   // State and Reducer Logic for the Zustand Application
   initialState: '',
   setInitialState: (snapshot) => {

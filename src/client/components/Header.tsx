@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import useExtensionStore from "../store/useExtensionStore";
+import { useStore } from "zustand";
 import "../styles/Header.scss";
 
 export const Header = (): JSX.Element => {
