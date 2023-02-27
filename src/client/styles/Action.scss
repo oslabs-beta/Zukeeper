@@ -1,16 +1,21 @@
-@import './_Colors.scss';
+@import './_Themes.scss';
 
 .action-button-container {
   display: flex;
   position: relative;
-  border-bottom: solid $black 1px;
+  border-bottom: solid var(--black) 1px;
   align-items: center;
 }
 
 .action-large-button {
+  background-color: var(--white);
+  font-size: 12px;
+  color: var(--black);
+  border: none;
+  border-bottom: solid var(--black) 1px;
   font-size: 12px;
   border: none;
-  background-color: $white;
+  background-color: var(--white);
   padding: 10px 8px;
   width: 100%;
   text-align:left;
@@ -18,17 +23,21 @@
   cursor: pointer;
 
   &:hover {
-    background-color: $light-medium-grey;
-    color: $white;
+    background-color: var(--medium-grey);
+    color: var(--white);
+    background-color: var(--light-medium-grey);
+    color: var(--white);
   }
 }
 
 .action-small-button {
   position: absolute;
-  border: 1px solid $light-medium-grey;
+  right: 12px; 
+  top: 7px;
+  border: 1px solid var(--light-medium-grey);
   border-radius: 5px;
-  color: $black;
-  background-color: $grey;
+  color: var(--black);
+  background-color: var(--grey);
   cursor: pointer;
   transition-duration: 0.2s;
   padding: 0rem 0.5rem;
@@ -37,22 +46,22 @@
   right: 0px;
 
   &:hover {
-    background-color: $red;
-    color: $white;
+    background-color: var(--red);
+    color: var(--white);
   }
 }
 
 .action-small-button-color {
-  background-color: $red;
-  color: $white;
+  background-color: var(--red);
+  color: var(--white);
 }
 
 .action-large-button-color-timetravel {
-  background-color: $pink;
-  color: $black;
+  background-color: var(--pink);
+  color: var(--black);
 }
 
 .action-large-button-color {
-  background: $medium-grey;
-  color: $white;
+  background: var(--medium-grey);
+  color: var(--white);
 }
