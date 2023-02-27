@@ -1,4 +1,4 @@
-function HierarchyConv(state) {
+function hierarchyConv(state) {
   const parent = {
     name: "root",
     children: [],
@@ -32,4 +32,4 @@ function HierarchyConv(state) {
   return parent.children[0];
 }
 
-export default HierarchyConv;
+export default hierarchyConv;
