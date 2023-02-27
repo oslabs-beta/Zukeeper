@@ -22,10 +22,13 @@
     background-color: #1a1917;
     color: #ffffff;
     // background colors were showing up on certain elements. Here are edge cases to prevent it
-    svg {
+    svg, .visualization-current-button, .visualization-buttons-container {
         background-color: transparent;
     }
     .action-large-button-color-timetravel{
         background-color: var(--pink);
+    }
+    .node__leaf  circle{
+        fill: white;
     }
 }

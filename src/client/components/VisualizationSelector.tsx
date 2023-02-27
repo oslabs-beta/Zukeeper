@@ -4,8 +4,12 @@ import { useStore } from "zustand";
 import "../styles/VisualizationSelector.scss";
 
 export const VisualizationSelector = (): JSX.Element => {
-  const { showState, showTree, showDiff, displayState, displayDiff } =
-    useStore(useExtensionStore);
+  const { showState, 
+    showTree, 
+    showDiff, 
+    displayState, 
+    displayDiff, 
+  } = useStore(useExtensionStore);
 
   return (
     <nav className="visualization-nav">

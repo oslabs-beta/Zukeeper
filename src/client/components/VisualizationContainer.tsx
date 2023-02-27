@@ -9,8 +9,10 @@ const DiffDisplay = lazy(() => import("./DiffDisplay"));
 const TreeDisplay = lazy(() => import("./TreeDisplay"));
 
 export const VisualizationContainer = (): JSX.Element => {
-  const { displayState, displayDiff } = useStore(useExtensionStore);
-
+  const { 
+    displayState, 
+    displayDiff,
+  } = useStore(useExtensionStore);
   return (
     <>
       <div id="visualization-container">

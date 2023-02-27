@@ -68,10 +68,11 @@ const useExtensionStore = create<Store>()(persist<Store>((set, get) => ({
 
   // Dark Mode
   isDarkMode: false,
-  toggleDarkMode: (isDarkMode) =>
+  toggleDarkMode: (isDarkMode) => {
     set({
       isDarkMode: !isDarkMode,
-    }),
+    })
+  },
   applyTheme: (isDarkMode) => {
     const elements = document.getElementsByTagName('body')[0].getElementsByTagName('*');
     for (let i = 0; i < elements.length; i++) {

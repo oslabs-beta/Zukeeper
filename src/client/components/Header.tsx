@@ -4,29 +4,13 @@ import { useStore } from "zustand";
 import "../styles/Header.scss";
 
 export const Header = (): JSX.Element => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const {
+    isDarkMode,
+    toggleDarkMode,
+    applyTheme,
+  } = useStore(useExtensionStore);
 
-  function toggleDarkMode() {
-    setIsDarkMode(!isDarkMode);
-  }
-
-  function applyTheme() {
-    const elements = document
-      .getElementsByTagName("body")[0]
-      .getElementsByTagName("*");
-    for (let i = 0; i < elements.length; i++) {
-      console.log(elements[i]);
-      if (isDarkMode) {
-        elements[i].classList.add("dark-theme");
-        elements[i].classList.remove("light-theme");
-      } else {
-        elements[i].classList.add("light-theme");
-        elements[i].classList.remove("dark-theme");
-      }
-    }
-  }
-
-  applyTheme();
+  applyTheme(isDarkMode);
 
   return (
     <header className="header">
@@ -34,7 +18,7 @@ export const Header = (): JSX.Element => {
         <label className="switch">
           <input
             type="checkbox"
-            onClick={toggleDarkMode}
+            onClick={() => toggleDarkMode(isDarkMode)}
           ></input>
           <span className="slider round"></span>
         </label>
