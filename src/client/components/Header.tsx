@@ -1,16 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.scss';
 
 
 export const Header = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  function toggleDarkMode() {
+    setIsDarkMode(!isDarkMode);
+  }
+
+  function applyTheme() {
+    const elements = document.getElementsByTagName('body')[0].getElementsByTagName('*');
+    for (let i = 0; i < elements.length; i++) {
+      console.log(elements[i]);
+      if (isDarkMode) {
+        elements[i].classList.add('dark-theme');
+        elements[i].classList.remove('light-theme');
+      } else {
+        elements[i].classList.add('light-theme');
+        elements[i].classList.remove('dark-theme');
+      }
+    }
+  }
+
+  applyTheme();
+
   return (
     <header className="header">
-      <button>fucking dark mode</button>
-      {/* add drop down image inside button */}
-      <button className="header-store-button">
-        Zustand Store
-        <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" className="arrow-down"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg>
-      </button>
+      <div className="header-left">
+        <label className="switch">
+          <input type="checkbox" onClick={toggleDarkMode}></input>
+          <span className="slider round"></span>
+        </label>
+        {/* add drop down image inside button */}
+      </div>
+      <div className="header-center">
+        <button className="header-store-button">
+          Zustand Store
+          <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" className="arrow-down"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg>
+        </button>
+      </div>
       <div className="header-image-container">
         <a href='https://github.com/oslabs-beta/Zukeeper' target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-github icon" viewBox="0 0 16 16">

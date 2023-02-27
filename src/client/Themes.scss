@@ -1,0 +1,27 @@
+.light-theme {
+    --black: #1a1917;
+    --medium-grey: #434343;
+    --light-medium-grey: #afafaf;
+    --grey: #d9d9d9;
+    --white: #ffffff;
+    --red: rgb(175, 92, 70);
+    --pink: rgb(250, 226, 221);
+    --svg-hover: #ffffff;
+  }
+
+// to avoid having to rename everything, I kept the variable names the same and switch the colors.
+.dark-theme {
+    --black: #858585;
+    --medium-grey: #494949;
+    --light-medium-grey: #4b4b4b;
+    --grey: #434343;
+    --white: #1a1917;
+    --red: #494949;
+    --pink: #b4b3b3;
+    --svg-hover: #ffffff;
+    background-color: #1a1917;
+    color: #ffffff;
+    svg{
+        background-color: transparent;
+    }
+}

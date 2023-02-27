@@ -1,9 +1,9 @@
-@import '../Colors.scss';
+@import '../Themes.scss';
 
 .diff-item {
-  color: $black;
+  color: var(--black);
   margin: 5px;
-  border: 1px solid $light-medium-grey;
+  border: 1px solid var(--light-medium-grey);
   padding: 1rem 0.5rem;
   border-radius: 2px;
 }

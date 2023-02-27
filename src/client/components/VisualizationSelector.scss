@@ -1,10 +1,10 @@
-@import '../Colors.scss';
+@import '../Themes.scss';
 
 .visualization-wrapper {
   display: flex;
-  background: $grey;
+  background: var(--grey);
   width: 100%;
-  border-bottom: 2px double $black;
+  border-bottom: 2px double var(--black);
   justify-content: end;
   align-items: center;
   position: relative;
@@ -16,7 +16,7 @@
 
 .visualization-current-button {
   position: absolute;
-  color: $black;
+  color: var(--black);
   left: 30px;
   font-size: 14px;
 }
@@ -24,26 +24,26 @@
 .visualization-display-button {
   padding: 0.4rem .9rem;
   margin: 5px 1px;
-  border: 1px solid $light-medium-grey;
+  border: 1px solid var(--light-medium-grey);
   border-radius: 5px;
   cursor: pointer;
   transition-duration: 0.2s;
   font-size: 14px;
-  background: $grey;
-  color: $black;
+  background: var(--grey);
+  color: var(--black);
 
   &:hover {
-    background-color: $medium-grey;
-    color: $white;
+    background-color: var(--medium-grey);
+    color: var(--white);
   }
 
   &:active {
-    background-color: $medium-grey;
-    color: $white;
+    background-color: var(--medium-grey);
+    color: var(--white);
   }
 }
 
 .visualization-button-color {
-  background: $medium-grey;
-  color: $white;
+  background: var(--medium-grey);
+  color: var(--white);
 }
