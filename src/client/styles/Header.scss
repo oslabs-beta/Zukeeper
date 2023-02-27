@@ -2,14 +2,18 @@
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 3rem;
   background-color: var(--grey);
   border-bottom: 1px solid var(--black);
 }
 
-.header-store{
+.header-left {
+  margin-left: 1.5rem;
+}
+
+.header-store {
   border: solid 1px var(--light-medium-grey);
   border-radius: 5px;
   background-color: var(--grey);
@@ -32,12 +36,13 @@
   column-gap: 0.75rem;
   justify-content: center;
   align-items: center;
+  margin-right: 1.5rem;
 
-  .icon{
+  .icon {
     color: var(--black);
     transition-duration: 0.2s;
     
-    &:hover, &:active{
+    &:hover, &:active {
       fill: var(--white);
     }
   }
@@ -85,7 +90,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px var(--medium-grey);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px -1px rgb(0 0 0 / 10%);
 }
 
 input:checked + .slider:before {
@@ -97,6 +102,7 @@ input:checked + .slider:before {
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px -1px rgb(0 0 0 / 10%);
 }
 
 .slider.round:before {

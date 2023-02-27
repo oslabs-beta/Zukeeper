@@ -6,8 +6,10 @@ import "../styles/ActionsDispatched.scss";
 
 export const ActionsDispatched = (): JSX.Element => {
   const { actionsDispatched, filter, setFilter } = useStore(useExtensionStore);
+
   // creating a Ref to the 'actions-list' componenet
   const currentStateContainer = useRef<HTMLDivElement>(null);
+
   // useEffect hook to pin scrollbar of the list items to the bottom based on 'actionsDispatched' state
   useEffect((): void => {
     const stateContainer: HTMLDivElement | null = currentStateContainer.current;
@@ -34,7 +36,7 @@ export const ActionsDispatched = (): JSX.Element => {
     });
 
   return (
-    <div className="actions-container">
+    <section className="actions-container">
       <input
         className="actions-input"
         type="text"
@@ -42,12 +44,12 @@ export const ActionsDispatched = (): JSX.Element => {
         autoFocus
         onChange={inputHandler}
       />
-      <div
+      <section
         className="actions-list"
         ref={currentStateContainer}
       >
         {actions}
-      </div>
-    </div>
+      </section>
+    </section>
   );
 };

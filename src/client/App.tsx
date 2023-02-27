@@ -66,10 +66,10 @@ const App = () => {
   return (
     <>
       <Header />
-      <div id="display-container">
+      <main id="display-container">
         <ActionsDispatched />
         <VisualizationContainer />
-      </div>
+      </main>
     </>
   );
 };

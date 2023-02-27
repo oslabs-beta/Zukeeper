@@ -36,7 +36,7 @@ export const StateDisplay = (): JSX.Element => {
 
   return (
     <>
-      <div className="current-state-container">{currStateArr}</div>
+      <section className="current-state-container">{currStateArr}</section>
     </>
   );
 };
