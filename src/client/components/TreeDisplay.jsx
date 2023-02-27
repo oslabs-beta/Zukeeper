@@ -5,7 +5,7 @@ import { useStore } from "zustand";
 import hierarchyConv from "../algorithms/hierarchyConv";
 import "../styles/TreeDisplay.scss";
 
-export const TreeDisplay = () => {
+const TreeDisplay = () => {
   const { previousStates, currState } = useStore(useExtensionStore);
 
   let stateHeirarchy;
@@ -20,7 +20,7 @@ export const TreeDisplay = () => {
       <circle
         r={10}
         onClick={toggleNode}
-      ></circle>
+      />
       <text
         fill="black"
         stroke="black"
@@ -69,3 +69,5 @@ export const TreeDisplay = () => {
     </div>
   );
 };
+
+export default TreeDisplay;

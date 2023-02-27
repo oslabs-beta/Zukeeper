@@ -3,7 +3,7 @@ import useExtensionStore from "../store/useExtensionStore";
 import { useStore } from "zustand";
 import "../styles/StateDisplay.scss";
 
-export const StateDisplay = () => {
+export const StateDisplay = (): JSX.Element => {
   // grabbing all previous states from our store
   const { previousStates, actionIndex } = useStore(useExtensionStore);
 
@@ -20,9 +20,10 @@ export const StateDisplay = () => {
   const currStateArr: JSX.Element[] = [];
 
   for (let key in currState) {
-    const value = JSON.stringify(currState[key])
+    const value: string = JSON.stringify(currState[key])
       .replaceAll(/,/g, ", ")
       .replaceAll(/:/g, ": ");
+
     currStateArr.push(
       <div
         className="current-state-item"

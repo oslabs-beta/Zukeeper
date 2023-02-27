@@ -4,7 +4,7 @@ import useExtensionStore from "../store/useExtensionStore";
 import { useStore } from "zustand";
 import "../styles/Action.scss";
 
-export const Action = (props: actionProps) => {
+export const Action = (props: actionProps): JSX.Element => {
   const {
     setActionIndex,
     actionIndex,
@@ -15,7 +15,7 @@ export const Action = (props: actionProps) => {
     setHighlightTime,
   } = useStore(useExtensionStore);
 
-  const stateChangeHandler = (bool) => {
+  const stateChangeHandler = (bool: boolean): void => {
     setActionIndex(props.idx);
     setCurrState(props.idx);
     setPrevState(props.idx - 1);

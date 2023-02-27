@@ -4,21 +4,21 @@ import { useStore } from "zustand";
 import { Action } from "./Action";
 import "../styles/ActionsDispatched.scss";
 
-export const ActionsDispatched = () => {
+export const ActionsDispatched = (): JSX.Element => {
   const { actionsDispatched, filter, setFilter } = useStore(useExtensionStore);
 
-  const inputHandler = (event) => {
+  const inputHandler = (event: any): void => {
     setFilter(event.target.value);
   };
 
-  const actions = actionsDispatched
-    .filter((action) => {
+  const actions: JSX.Element[] = actionsDispatched
+    .filter((action: string) => {
       return action.toLowerCase().startsWith(filter.toLowerCase());
     })
     .map((el, idx) => {
       return (
         <Action
-          key={idx}
+          key={idx + el}
           action={el}
           idx={idx}
           length={actionsDispatched.length}

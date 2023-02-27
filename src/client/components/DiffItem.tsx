@@ -4,7 +4,7 @@ import useExtensionStore from "../store/useExtensionStore";
 import { useStore } from "zustand";
 import "../styles/DiffItem.scss";
 
-export const DiffItem = (props: diffProps) => {
+export const DiffItem = (props: diffProps): JSX.Element => {
   const { previousStates, currState, prevState } = useStore(useExtensionStore);
 
   let path: string = "";

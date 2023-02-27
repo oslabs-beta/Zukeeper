@@ -1,9 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Header.scss";
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  function toggleDarkMode() {
+    setIsDarkMode(!isDarkMode);
+  }
+
+  function applyTheme() {
+    const elements = document
+      .getElementsByTagName("body")[0]
+      .getElementsByTagName("*");
+    for (let i = 0; i < elements.length; i++) {
+      console.log(elements[i]);
+      if (isDarkMode) {
+        elements[i].classList.add("dark-theme");
+        elements[i].classList.remove("light-theme");
+      } else {
+        elements[i].classList.add("light-theme");
+        elements[i].classList.remove("dark-theme");
+      }
+    }
+  }
+
+  applyTheme();
+
   return (
     <header className="header">
+      <div className="header-left">
+        <label className="switch">
+          <input
+            type="checkbox"
+            onClick={toggleDarkMode}
+          ></input>
+          <span className="slider round"></span>
+        </label>
+      </div>
       <div className="header-store">
         <h1>Zustand Store</h1>
       </div>
@@ -26,6 +59,7 @@ export const Header = () => {
         <a
           href="https://github.com/oslabs-beta/Zukeeper/issues"
           target="_blank"
+          title="Issues?"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -1,18 +1,16 @@
-@import './Colors.scss';
-
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   height: 100vh;
   width: 100vw;
-  background-color: $white;
+  // background-color: rgba(114, 125, 153, 0.5);
+  background-color: white;
   overflow-y: hidden;
 }
 
 #root {
   display: flex;
   flex-direction: column;
-  flex: none;
 }
 
 #display-container {
