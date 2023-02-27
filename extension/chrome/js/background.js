@@ -24,6 +24,8 @@ chrome.runtime.onConnect.addListener((port) => {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (devToolPort) {
     if (request.body === 'Data') {
+      console.log('gets data triggered')
+
       devToolPort.postMessage({
         body: request.body,
         state: JSON.parse(request.state),
@@ -31,6 +33,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       });
     };
     if (request.body === 'Innit') {
+      console.log('gets trigger')
       devToolPort.postMessage({
         body: request.body,
         state: JSON.parse(request.state)});
@@ -39,7 +42,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-  if (tabId === developerTab) {
+  if (tabId === developerTab.id) {
     devToolPort.postMessage({
       body: 'Reset',
     });

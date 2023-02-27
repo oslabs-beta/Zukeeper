@@ -20,7 +20,7 @@ const TreeDisplay = () => {
       <circle
         r={10}
         onClick={toggleNode}
-      ></circle>
+      />
       <text
         fill="black"
         stroke="black"
