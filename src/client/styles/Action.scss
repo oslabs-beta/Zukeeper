@@ -1,9 +1,10 @@
-@import '../Themes.scss';
+@import './_Themes.scss';
 
 .action-button-container {
   display: flex;
   position: relative;
-  justify-content: start;
+  border-bottom: solid var(--black) 1px;
+  align-items: center;
 }
 
 .action-large-button {
@@ -12,6 +13,9 @@
   color: var(--black);
   border: none;
   border-bottom: solid var(--black) 1px;
+  font-size: 12px;
+  border: none;
+  background-color: var(--white);
   padding: 10px 8px;
   width: 100%;
   text-align:left;
@@ -21,6 +25,8 @@
   &:hover {
     background-color: var(--medium-grey);
     color: var(--white);
+    background-color: var(--light-medium-grey);
+    color: var(--white);
   }
 }
 
@@ -28,13 +34,16 @@
   position: absolute;
   right: 12px; 
   top: 7px;
-  border: solid 1px var(--grey);
   border: 1px solid var(--light-medium-grey);
   border-radius: 5px;
   color: var(--black);
   background-color: var(--grey);
   cursor: pointer;
   transition-duration: 0.2s;
+  padding: 0rem 0.5rem;
+  height: 1.5rem;
+  margin-right: 0.75rem;
+  right: 0px;
 
   &:hover {
     background-color: var(--red);

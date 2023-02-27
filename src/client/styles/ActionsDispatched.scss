@@ -1,20 +1,20 @@
-@import '../Themes.scss';
+@import './_Themes.scss';
 
 .actions-container {
   flex-basis: 30%;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--black);
+  border-right: 2px double var(--black);
   background-color: #ffffff;
 }
 
 .actions-input {
   text-align: left;
   border: none;
-  border-bottom: 1px solid var(--black);
   background-color: var(--grey);
   color: var(--black);
-  padding: 5px 8px; 
+  border-bottom: 2px double var(--black);
+  padding: 0.25rem 0.5rem; 
 }
 
 .actions-input:focus{

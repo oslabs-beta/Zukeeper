@@ -21,6 +21,7 @@
     --svg-hover: var(--red);
     background-color: #1a1917;
     color: #ffffff;
+    // background colors were showing up on certain elements. Here are edge cases to prevent it
     svg {
         background-color: transparent;
     }
