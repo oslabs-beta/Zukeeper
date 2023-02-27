@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import useExtensionStore from "../store/useExtensionStore";
 import { useStore } from "zustand";
 import { Action } from "./Action";
@@ -6,6 +6,13 @@ import "../styles/ActionsDispatched.scss";
 
 export const ActionsDispatched = (): JSX.Element => {
   const { actionsDispatched, filter, setFilter } = useStore(useExtensionStore);
+  // creating a Ref to the 'actions-list' componenet
+  const currentStateContainer = useRef<HTMLDivElement>(null);
+  // useEffect hook to pin scrollbar of the list items to the bottom based on 'actionsDispatched' state
+  useEffect((): void => {
+    const stateContainer: HTMLDivElement | null = currentStateContainer.current;
+    if (stateContainer) stateContainer.scrollTop = stateContainer.scrollHeight;
+  }, [actionsDispatched]);
 
   const inputHandler = (event: any): void => {
     setFilter(event.target.value);
@@ -35,7 +42,12 @@ export const ActionsDispatched = (): JSX.Element => {
         autoFocus
         onChange={inputHandler}
       />
-      <div className="actions-list">{actions}</div>
+      <div
+        className="actions-list"
+        ref={currentStateContainer}
+      >
+        {actions}
+      </div>
     </div>
   );
 };

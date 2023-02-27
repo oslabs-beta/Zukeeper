@@ -27,7 +27,7 @@ export const StateDisplay = (): JSX.Element => {
     currStateArr.push(
       <div
         className="current-state-item"
-        key={key}
+        key={key + value}
       >
         {key}: {value}
       </div>
