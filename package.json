@@ -1,7 +1,7 @@
 {
   "name": "zukeeper",
   "version": "1.0.0",
-  "description": "A native, visualization developer tool for Zustand",
+  "description": "A native, holistic developer tool for Zustand",
   "main": "./src/client/index.js",
   "scripts": {
     "build": "webpack",

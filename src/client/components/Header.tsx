@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Header.scss";
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
   return (
     <header className="header">
       <div className="header-store">
@@ -11,6 +11,7 @@ export const Header = () => {
         <a
           href="https://github.com/oslabs-beta/Zukeeper"
           target="_blank"
+          title="GitHub"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -26,6 +27,7 @@ export const Header = () => {
         <a
           href="https://github.com/oslabs-beta/Zukeeper/issues"
           target="_blank"
+          title="Issues?"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

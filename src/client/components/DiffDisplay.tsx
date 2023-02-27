@@ -6,7 +6,7 @@ import { DiffItem } from "./DiffItem";
 import { diffProps } from "../../types/types";
 import "../styles/DiffDisplay.scss";
 
-export const DiffDisplay = () => {
+const DiffDisplay = (): null | JSX.Element => {
   const { previousStates, currState, prevState } = useStore(useExtensionStore);
   console.log("currState", currState);
   console.log("prevState", prevState);
@@ -21,7 +21,7 @@ export const DiffDisplay = () => {
             key={idx}
             obj={obj}
             action={true}
-          ></DiffItem>
+          />
         );
       }
     );
@@ -40,7 +40,7 @@ export const DiffDisplay = () => {
             key={idx}
             obj={obj}
             action={false}
-          ></DiffItem>
+          />
         );
       }
     );
@@ -48,3 +48,5 @@ export const DiffDisplay = () => {
     return <div className="diff-item-container">{diffItems}</div>;
   } else return null;
 };
+
+export default DiffDisplay;

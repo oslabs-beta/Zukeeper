@@ -1,17 +1,16 @@
-@import './Colors.scss';
+@import './_Colors.scss';
 
 .action-button-container {
   display: flex;
   position: relative;
-  justify-content: start;
+  border-bottom: solid $black 1px;
+  align-items: center;
 }
 
 .action-large-button {
-  background-color: $white;
   font-size: 12px;
-  color: $black;
   border: none;
-  border-bottom: solid $black 1px;
+  background-color: $white;
   padding: 10px 8px;
   width: 100%;
   text-align:left;
@@ -19,22 +18,23 @@
   cursor: pointer;
 
   &:hover {
-    background-color: $medium-grey;
+    background-color: $light-medium-grey;
     color: $white;
   }
 }
 
 .action-small-button {
   position: absolute;
-  right: 12px; 
-  top: 7px;
-  border: solid 1px $grey;
   border: 1px solid $light-medium-grey;
   border-radius: 5px;
   color: $black;
   background-color: $grey;
   cursor: pointer;
   transition-duration: 0.2s;
+  padding: 0rem 0.5rem;
+  height: 1.5rem;
+  margin-right: 0.75rem;
+  right: 0px;
 
   &:hover {
     background-color: $red;

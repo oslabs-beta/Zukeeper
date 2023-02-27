@@ -1,4 +1,4 @@
-@import './Colors.scss';
+@import './_Colors.scss';
 
 .visualization-wrapper {
   display: flex;
@@ -6,10 +6,13 @@
   border-bottom: 2px double $black;
   justify-content: space-between;
   align-items: center;
+  column-gap: 1rem;
+  height: 2.25rem;
 }
 
 .visualization-current-button {
   font-size: 1rem;
+  margin-left: 1rem;
 }
 
 .visualization-buttons-container {

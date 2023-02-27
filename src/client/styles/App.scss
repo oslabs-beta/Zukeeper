@@ -1,4 +1,4 @@
-@import './Colors.scss';
+@import './_Colors.scss';
 
 body {
   margin: 0;
@@ -12,7 +12,6 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  flex: none;
 }
 
 #display-container {
