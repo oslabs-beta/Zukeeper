@@ -16,12 +16,15 @@
     --light-medium-grey: #4b4b4b;
     --grey: #434343;
     --white: #1a1917;
-    --red: #494949;
-    --pink: #b4b3b3;
-    --svg-hover: #ffffff;
+    --red: #434343;
+    --pink: #4b4b4b;
+    --svg-hover: var(--red);
     background-color: #1a1917;
     color: #ffffff;
-    svg{
+    svg {
         background-color: transparent;
+    }
+    .action-large-button-color-timetravel{
+        background-color: var(--pink);
     }
 }
