@@ -93,7 +93,6 @@ const useExtensionStore = create<Store>()(persist<Store>((set, get) => ({
     })),
     
   resetState: () => {
-    console.log('dsjdfsjlidjsd')
     set((state) => ({
       previousStates: [state.initialState],
       actionsDispatched: [],
