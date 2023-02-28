@@ -21,20 +21,21 @@
   outline: none;
 }
 
-
 .actions-buttons {
   display: flex;
   background-color: var(--grey);
   padding: 0.25rem 0.5rem; 
   justify-content: space-between;
+  border-bottom: 2px double var(--primary-dark);
 }
 
 .action-move-container {
-  display:flex;
+  display: flex;
+  column-gap: 0.25rem;
   background-color: var(--grey);
 }
 
 .actions-list {
   overflow-y: scroll;
-  height: calc(100vh - 5.5rem);
+  height: calc(100vh - 7.5rem);
 }

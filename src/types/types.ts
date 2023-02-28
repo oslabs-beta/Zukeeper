@@ -26,10 +26,9 @@ export interface Store {
   isDarkMode: boolean;
   toggleDarkMode: (bool: boolean) => void;
   applyTheme: (bool: boolean) => void;
-  
 
-  initialState: string;
-  setInitialState: (snapshot: string) => void;
+  initialState: {};
+  setInitialState: (snapshot: {}) => void;
 
   previousStates: object[];
   addPreviousState: (snapshot: object) => void;
@@ -39,8 +38,8 @@ export interface Store {
 
   resetState: () => void;
 
-  reset: boolean,
-  setReset: (bool: boolean) => void,
+  reset: boolean;
+  setReset: (bool: boolean) => void;
 }
 
 export type diffProps = {
