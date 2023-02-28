@@ -14,20 +14,29 @@
     --primary-dark: #858585;
     --primary-light: #4b4b4b;
     --secondary: #434343;
-    --secondary-light: #1a1917;
-    --tertiary-dark: #121212;
-    --tertiary-light: #4b4b4b;
+    --secondary-light: #2e2e2e;
+    --tertiary-dark: #1d1d1d;
+    --tertiary-light: #979797;
     --svg-hover: var(--tertiary-dark);
-    background-color: #1a1917;
     color: #ffffff;
-    // background colors were showing up on certain elements. Here are edge cases to prevent it
-    .visualization-current-button, .visualization-buttons-container {
-        background-color: transparent;
-    }
+
     .action-large-button-color-timetravel{
         background-color: var(--tertiary-light);
     }
     .node__leaf  circle{
         fill: white;
+    }
+    .node__root  circle {
+        fill: var(--tertiary-light);
+    }
+    .visualization-button-color {
+        background: var(--secondary-light);
+        color: #ffffff;
+    }
+    #display-container, .actions-container, .header, .visualization-wrapper {
+        background-color: #222222;
+    }
+    .diff-item {
+        color: #ffffff;
     }
 }

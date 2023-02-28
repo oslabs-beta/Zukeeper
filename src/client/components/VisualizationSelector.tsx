@@ -9,6 +9,7 @@ export const VisualizationSelector = (): JSX.Element => {
     showDiff, 
     displayState, 
     displayDiff, 
+    isDarkMode,
   } = useStore(useExtensionStore);
 
   return (
@@ -21,7 +22,7 @@ export const VisualizationSelector = (): JSX.Element => {
           <button
             className={`visualization-display-button ${
               displayState ? "visualization-button-color" : ""
-            } `}
+            } ${isDarkMode ? 'dark-theme' : 'light-theme'}`}
             onClick={showState}
           >
             State
@@ -29,7 +30,7 @@ export const VisualizationSelector = (): JSX.Element => {
           <button
             className={`visualization-display-button ${
               displayDiff ? "visualization-button-color" : ""
-            } `}
+            } ${isDarkMode ? 'dark-theme' : 'light-theme'}`}
             onClick={showDiff}
           >
             Diff
@@ -37,7 +38,7 @@ export const VisualizationSelector = (): JSX.Element => {
           <button
             className={`visualization-display-button ${
               !displayState && !displayDiff ? "visualization-button-color" : ""
-            } `}
+            } ${isDarkMode ? 'dark-theme' : 'light-theme'}`}
             onClick={showTree}
           >
             Tree
