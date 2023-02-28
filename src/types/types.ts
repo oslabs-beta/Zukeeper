@@ -31,13 +31,16 @@ export interface Store {
   initialState: string;
   setInitialState: (snapshot: string) => void;
 
-  previousStates: string[];
-  addPreviousState: (snapshot: string) => void;
+  previousStates: object[];
+  addPreviousState: (snapshot: object) => void;
 
   actionsDispatched: string[];
   addActionDispatched: (snapshot: string) => void;
 
   resetState: () => void;
+
+  reset: boolean,
+  setReset: (bool: boolean) => void,
 }
 
 export type diffProps = {

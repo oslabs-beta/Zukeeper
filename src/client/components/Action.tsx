@@ -13,9 +13,12 @@ export const Action = (props: actionProps): JSX.Element => {
     setTimeTravel,
     highlightTime,
     setHighlightTime,
+    previousStates
   } = useStore(useExtensionStore);
 
   const stateChangeHandler = (bool: boolean): void => {
+    console.log('props.idx',props.idx)
+    console.log('previous states', previousStates)
     setActionIndex(props.idx);
     setCurrState(props.idx);
     setPrevState(props.idx - 1);
