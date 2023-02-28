@@ -23,8 +23,13 @@ export interface Store {
   highlightTime: number[];
   setHighlightTime: (bool: boolean, idx1: number, idx2: number) => void;
 
-  initialState: object;
-  setInitialState: (snapshot: object) => void;
+  isDarkMode: boolean;
+  toggleDarkMode: (bool: boolean) => void;
+  applyTheme: (bool: boolean) => void;
+  
+
+  initialState: string;
+  setInitialState: (snapshot: string) => void;
 
   previousStates: object[];
   addPreviousState: (snapshot: object) => void;

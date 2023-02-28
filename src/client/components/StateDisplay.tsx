@@ -5,7 +5,11 @@ import "../styles/StateDisplay.scss";
 
 export const StateDisplay = (): JSX.Element => {
   // grabbing all previous states from our store
-  const { previousStates, actionIndex } = useStore(useExtensionStore);
+  const { 
+    previousStates, 
+    actionIndex,
+    isDarkMode
+  } = useStore(useExtensionStore);
 
   let currState: any;
   // determine if there is an non-undefined value for the current state - which should be the last element of the array
@@ -26,14 +30,13 @@ export const StateDisplay = (): JSX.Element => {
 
     currStateArr.push(
       <div
-        className="current-state-item"
+        className={`current-state-item ${isDarkMode ? 'dark-theme' : 'light-theme'}`}
         key={key + value}
       >
         {key}: {value}
       </div>
     );
   }
-
   return (
     <>
       <section className="current-state-container">{currStateArr}</section>

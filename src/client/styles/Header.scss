@@ -5,8 +5,8 @@
   justify-content: space-between;
   align-items: center;
   height: 3rem;
-  background-color: var(--grey);
-  border-bottom: 1px solid var(--black);
+  background-color: var(--secondary);
+  border-bottom: 1px solid var(--primary-dark);
 }
 
 .header-left {
@@ -14,9 +14,9 @@
 }
 
 .header-store {
-  border: solid 1px var(--light-medium-grey);
+  border: solid 1px var(--primary-light);
   border-radius: 5px;
-  background-color: var(--grey);
+  background-color: var(--secondary);
   font-size: 0.5rem;
   width: 10rem;
   display: flex;
@@ -38,12 +38,12 @@
   align-items: center;
   margin-right: 1.5rem;
 
-  .icon {
-    color: var(--black);
+  .icon{
+    color: var(--primary);
     transition-duration: 0.2s;
     
-    &:hover, &:active {
-      fill: var(--white);
+    &:hover, &:active{
+      fill: var(--primary-light);
     }
   }
 }
@@ -81,16 +81,16 @@
   width: 1.25rem;
   left: 4px;
   top: 2px;
-  background-color: var(--white);
+  background-color: var(--secondary-light);
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: var(--medium-grey);
+  background-color: var(--primary);
 }
 
 input:focus + .slider {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px -1px rgb(0 0 0 / 10%);
+  box-shadow: 0 0 1px var(--primary);
 }
 
 input:checked + .slider:before {

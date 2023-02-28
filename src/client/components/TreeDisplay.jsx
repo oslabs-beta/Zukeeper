@@ -6,7 +6,11 @@ import hierarchyConv from "../algorithms/hierarchyConv";
 import "../styles/TreeDisplay.scss";
 
 const TreeDisplay = () => {
-  const { previousStates, currState } = useStore(useExtensionStore);
+  const { 
+    previousStates, 
+    currState,
+    isDarkMode 
+  } = useStore(useExtensionStore);
 
   let stateHeirarchy;
   if (Object.keys(currState).length > 0) {
@@ -22,8 +26,8 @@ const TreeDisplay = () => {
         onClick={toggleNode}
       />
       <text
-        fill="black"
-        stroke="black"
+        fill={`${isDarkMode ? 'white' : 'black'}`}
+        stroke={`${isDarkMode ? 'white' : 'black'}`}
         strokeWidth="1"
         y="4"
         x={nodeDatum.children ? "-13" : "13"}
@@ -33,8 +37,8 @@ const TreeDisplay = () => {
       </text>
       {nodeDatum.attributes && (
         <text
-          fill="black"
-          stroke="black"
+          fill={`${isDarkMode ? 'white' : 'black'}`}
+          stroke={`${isDarkMode ? 'white' : 'black'}`}
           strokeWidth="1"
           x="20"
           dy="20"
