@@ -1,34 +1,34 @@
 @import './_Themes.scss';
 
 .node__root  circle {
-  fill: var(-red);
-  stroke: var(-red);
+  fill: var(--tertiary-dark);
+  stroke: var(--tertiary-dark);
   stroke-width: 2px;
   r: 10;
 }
 
 .node__branch  circle {
-  fill: var(--pink);
-  stroke: var(--pink);
+  fill: var(--tertiary-light);
+  stroke: var(--tertiary-light);
   stroke-width: 2px;
   r: 10;
 }
 
 .node__leaf  circle {
-  fill:  var(--white);
-  stroke: var(--medium-grey);
+  fill:  var(--secondary-light);
+  stroke: var(--primary);
   stroke-width: 2px;
   r: 10;
 }
 
 .node__root text, .node__branch text, .node__leaf text{
   text-shadow:
-  -1px -1px 3px var(--white),
-  -1px  1px 3px  var(--white),
-   1px -1px 3px var(--white),
-   1px  1px 3px  var(--white),
+  -1px -1px 3px var(--secondary-light),
+  -1px  1px 3px  var(--secondary-light),
+   1px -1px 3px var(--secondary-light),
+   1px  1px 3px  var(--secondary-light),
 }
 
 .rd3t-link {
-  stroke: var(--black) !important;
+  stroke: var(--primary-dark) !important;
 }

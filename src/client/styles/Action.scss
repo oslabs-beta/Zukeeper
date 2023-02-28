@@ -3,19 +3,19 @@
 .action-button-container {
   display: flex;
   position: relative;
-  border-bottom: solid var(--black) 1px;
+  border-bottom: solid var(--primary-dark) 1px;
   align-items: center;
 }
 
 .action-large-button {
-  background-color: var(--white);
+  background-color: var(--secondary-light);
   font-size: 12px;
-  color: var(--black);
+  color: var(--primary-dark);
   border: none;
-  border-bottom: solid var(--black) 1px;
+  border-bottom: solid var(--primary-dark) 1px;
   font-size: 12px;
   border: none;
-  background-color: var(--white);
+  background-color: var(--secondary-light);
   padding: 10px 8px;
   width: 100%;
   text-align:left;
@@ -23,10 +23,10 @@
   cursor: pointer;
 
   &:hover {
-    background-color: var(--medium-grey);
-    color: var(--white);
-    background-color: var(--light-medium-grey);
-    color: var(--white);
+    // background-color: var(--primary);
+    // color: var(--secondary-light);
+    background-color: var(--primary-light);
+    color: var(--secondary-light);
   }
 }
 
@@ -34,10 +34,10 @@
   position: absolute;
   right: 12px; 
   top: 7px;
-  border: 1px solid var(--light-medium-grey);
+  border: 1px solid var(--primary-light);
   border-radius: 5px;
-  color: var(--black);
-  background-color: var(--grey);
+  color: var(--primary);
+  background-color: var(--secondary);
   cursor: pointer;
   transition-duration: 0.2s;
   padding: 0rem 0.5rem;
@@ -46,22 +46,22 @@
   right: 0px;
 
   &:hover {
-    background-color: var(--red);
-    color: var(--white);
+    background-color: var(--tertiary-dark);
+    color: var(--secondary-light);
   }
 }
 
 .action-small-button-color {
-  background-color: var(--red);
-  color: var(--white);
+  background-color: var(--tertiary-dark);
+  color: var(--secondary-light);
 }
 
 .action-large-button-color-timetravel {
-  background-color: var(--pink);
-  color: var(--black);
+  background-color: var(--tertiary-light);
+  color: var(--primary-dark);
 }
 
 .action-large-button-color {
-  background: var(--medium-grey);
-  color: var(--white);
+  background: var(--primary);
+  color: var(--secondary-light);
 }

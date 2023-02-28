@@ -5,14 +5,14 @@
   justify-content: space-around;
   align-items: center;
   height: 3rem;
-  background-color: var(--grey);
-  border-bottom: 1px solid var(--black);
+  background-color: var(--secondary);
+  border-bottom: 1px solid var(--primary-dark);
 }
 
 .header-store{
-  border: solid 1px var(--light-medium-grey);
+  border: solid 1px var(--primary-light);
   border-radius: 5px;
-  background-color: var(--grey);
+  background-color: var(--secondary);
   font-size: 0.5rem;
   width: 10rem;
   display: flex;
@@ -34,11 +34,11 @@
   align-items: center;
 
   .icon{
-    color: var(--medium-grey);
+    color: var(--primary);
     transition-duration: 0.2s;
     
     &:hover, &:active{
-      fill: var(--light-medium-grey);
+      fill: var(--primary-light);
     }
   }
 }
@@ -76,16 +76,16 @@
   width: 1.25rem;
   left: 4px;
   top: 2px;
-  background-color: var(--white);
+  background-color: var(--secondary-light);
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: var(--medium-grey);
+  background-color: var(--primary);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px var(--medium-grey);
+  box-shadow: 0 0 1px var(--primary);
 }
 
 input:checked + .slider:before {
