@@ -67,14 +67,15 @@ const useExtensionStore = create<Store>()(persist<Store>((set, get) => ({
   },
 
   // State and Reducer Logic for the Zustand Application
-  initialState: '',
+  initialState: {},
   setInitialState: (snapshot) => {
+    console.log('snapshot', snapshot);
     const state = get();
-    if (state.initialState.length === 0) {
+    if (Object.keys(state.initialState).length === 0) {
       set((state) => ({
         initialState: snapshot,
+        previousStates: [snapshot],
       }));
-    state.addPreviousState(snapshot);
     };
   },
   
@@ -92,10 +93,23 @@ const useExtensionStore = create<Store>()(persist<Store>((set, get) => ({
     })),
     
   resetState: () => {
+    console.log('dsjdfsjlidjsd')
     set((state) => ({
       previousStates: [state.initialState],
       actionsDispatched: [],
+      highlightTime: [],
+      prevState: {},
+      currState: {},
+      timeTravel: false,
+      actionIndex: null,
     }));
+  },
+
+  reset: false,
+  setReset: (bool) => {
+    set((state) => ({
+      reset: bool
+    }))
   },
 }),
 {

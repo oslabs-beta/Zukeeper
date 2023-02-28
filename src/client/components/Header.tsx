@@ -13,7 +13,6 @@ export const Header = (): JSX.Element => {
       .getElementsByTagName("body")[0]
       .getElementsByTagName("*");
     for (let i = 0; i < elements.length; i++) {
-      console.log(elements[i]);
       if (isDarkMode) {
         elements[i].classList.add("dark-theme");
         elements[i].classList.remove("light-theme");

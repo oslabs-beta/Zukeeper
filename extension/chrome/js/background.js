@@ -10,7 +10,6 @@ chrome.runtime.onConnect.addListener((port) => {
   });
   
   devToolPort.onMessage.addListener((message, sender, sendResponse) => {
-    console.log(developerTab)
     if (message.body === 'TimeTravel') {
       chrome.tabs.sendMessage(developerTab.id, {
         body: 'TimeTravel',
@@ -24,7 +23,6 @@ chrome.runtime.onConnect.addListener((port) => {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (devToolPort) {
     if (request.body === 'Data') {
-      console.log('gets data triggered')
 
       devToolPort.postMessage({
         body: request.body,
@@ -33,7 +31,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       });
     };
     if (request.body === 'Innit') {
-      console.log('gets trigger')
       devToolPort.postMessage({
         body: request.body,
         state: JSON.parse(request.state)});
