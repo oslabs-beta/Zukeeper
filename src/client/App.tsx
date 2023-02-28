@@ -17,6 +17,9 @@ const App = () => {
     currState,
     timeTravel,
     setTimeTravel,
+    initialState,
+    reset, 
+    setReset,
   } = useStore(useExtensionStore);
 
   // let connected: boolean = false;
@@ -36,6 +39,7 @@ const App = () => {
         }
         if (message.body === "Innit") {
           setInitialState(message.state);
+          console.log('message.state', message.state)
         }
         if (message.body === "Reset") {
           resetState();
@@ -53,7 +57,8 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    console.log("port", port);
+    // console.log("port", port);
+    console.log('time')
     if (timeTravel) {
       port.postMessage({
         body: "TimeTravel",
@@ -62,6 +67,19 @@ const App = () => {
       setTimeTravel(false);
     }
   }, [timeTravel]);
+
+  useEffect(() => {
+    // console.log("port", port);
+    console.log('reset')
+    resetState();
+    if (reset) {
+      port.postMessage({
+        body: "TimeTravel",
+        TimeTravel: initialState,
+      });
+      setReset(false);
+    }
+  }, [reset]);
 
   return (
     <>

@@ -23,16 +23,19 @@ export interface Store {
   highlightTime: number[];
   setHighlightTime: (bool: boolean, idx1: number, idx2: number) => void;
 
-  initialState: string;
-  setInitialState: (snapshot: string) => void;
+  initialState: object;
+  setInitialState: (snapshot: object) => void;
 
-  previousStates: string[];
-  addPreviousState: (snapshot: string) => void;
+  previousStates: object[];
+  addPreviousState: (snapshot: object) => void;
 
   actionsDispatched: string[];
   addActionDispatched: (snapshot: string) => void;
 
   resetState: () => void;
+
+  reset: boolean,
+  setReset: (bool: boolean) => void,
 }
 
 export type diffProps = {
