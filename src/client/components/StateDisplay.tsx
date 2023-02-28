@@ -31,7 +31,7 @@ export const StateDisplay = (): JSX.Element => {
     currStateArr.push(
       <div
         className={`current-state-item ${isDarkMode ? 'dark-theme' : 'light-theme'}`}
-        key={key}
+        key={key + value}
       >
         {key}: {value}
       </div>
@@ -39,7 +39,7 @@ export const StateDisplay = (): JSX.Element => {
   }
   return (
     <>
-      <div className="current-state-container">{currStateArr}</div>
+      <section className="current-state-container">{currStateArr}</section>
     </>
   );
 };

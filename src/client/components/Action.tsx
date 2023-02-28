@@ -37,7 +37,9 @@ export const Action = (props: actionProps): JSX.Element => {
         }`}
         onClick={() => stateChangeHandler(false)}
       >
-        {props.action}
+        <div className="action-text-wrapper">
+          <p className="action-text">{props.action}</p>
+        </div>
       </button>
       <button
         className={`action-small-button ${

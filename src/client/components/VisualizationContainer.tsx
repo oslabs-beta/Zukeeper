@@ -15,10 +15,10 @@ export const VisualizationContainer = (): JSX.Element => {
   } = useStore(useExtensionStore);
   return (
     <>
-      <div id="visualization-container">
+      <section id="visualization-container">
         <VisualizationSelector />
         <Suspense>
-          <div id="display-space">
+          <section id="display-space">
             {displayState ? (
               <StateDisplay />
             ) : displayDiff ? (
@@ -26,9 +26,9 @@ export const VisualizationContainer = (): JSX.Element => {
             ) : (
               <TreeDisplay />
             )}
-          </div>
+          </section>
         </Suspense>
-      </div>
+      </section>
     </>
   );
 };

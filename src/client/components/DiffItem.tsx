@@ -2,7 +2,7 @@ import React from "react";
 import { diffProps } from "../../types/types";
 import useExtensionStore from "../store/useExtensionStore";
 import { useStore } from "zustand";
-import "../styles/DiffItem.scss";
+import "../styles/DiffDisplay.scss";
 
 export const DiffItem = (props: diffProps): JSX.Element => {
   const { 

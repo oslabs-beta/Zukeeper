@@ -8,19 +8,26 @@
 }
 
 .action-large-button {
-  background-color: var(--secondary-light);
-  font-size: 12px;
   color: var(--primary-dark);
-  border: none;
   border-bottom: solid var(--primary-dark) 1px;
-  font-size: 12px;
+  font-size: 0.75rem;
   border: none;
   background-color: var(--secondary-light);
-  padding: 10px 8px;
+  padding: 0.75rem 0.5rem;
   width: 100%;
   text-align:left;
   transition-duration: 0.2s;
   cursor: pointer;
+
+  .action-text-wrapper {
+    width: calc(100% - 4rem);
+    overflow: hidden;
+    white-space: nowrap;
+
+    .action-text {
+      margin: 0;
+    }
+  }
 
   &:hover {
     // background-color: var(--primary);
@@ -32,16 +39,13 @@
 
 .action-small-button {
   position: absolute;
-  right: 12px; 
-  top: 7px;
   border: 1px solid var(--primary-light);
   border-radius: 5px;
   color: var(--primary);
   background-color: var(--secondary);
   cursor: pointer;
   transition-duration: 0.2s;
-  padding: 0rem 0.5rem;
-  height: 1.5rem;
+  padding: 0.2rem 0.5rem;
   margin-right: 0.75rem;
   right: 0px;
 

@@ -2,6 +2,15 @@
 
 .diff-item-container {
   overflow-y: scroll;
-  // height: 18rem;
-  margin: 40px;
+  height: calc(100vh - 8.5rem);
+  margin: 0.25rem 0.25rem;
+  padding: 1rem;
+}
+
+.diff-item {
+  margin: 0.25rem;
+  border: 1px solid var(--light-medium-grey);
+  padding: 1rem 0.5rem;
+  border-radius: 0.25rem;
+  color: var(--black);
 }
