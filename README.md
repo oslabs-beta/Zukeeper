@@ -43,7 +43,7 @@ Time travel debugging:
 
 and of course… Dark mode:
 
-
+![Zukeeper in dark mode](./README%20assets/darkMode.png)
 
 ---
 
