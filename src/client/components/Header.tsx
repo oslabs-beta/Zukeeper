@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import useExtensionStore from "../store/useExtensionStore";
 import { useStore } from "zustand";
 import "../styles/Header.scss";
@@ -8,9 +8,14 @@ export const Header = (): JSX.Element => {
     isDarkMode,
     toggleDarkMode,
     applyTheme,
+    actionsDispatched
   } = useStore(useExtensionStore);
 
   applyTheme(isDarkMode);
+  
+  useEffect(() => {
+    applyTheme(isDarkMode);
+  }, [actionsDispatched]);
 
   return (
     <header className="header">
