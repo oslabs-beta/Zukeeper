@@ -11,9 +11,9 @@
 .actions-input {
   text-align: left;
   border: none;
-  background-color: var(--secondary);
+  background-color: var(--secondary-light);
   color: var(--primary-dark);
-  border-bottom: 2px double var(--primary-dark);
+  border-bottom: 1px solid var(--primary-light);
   padding: 0.25rem 0.5rem; 
 }
 
@@ -23,16 +23,47 @@
 
 .actions-buttons {
   display: flex;
-  background-color: var(--grey);
+  background-color: var(--secondary);
   padding: 0.25rem 0.5rem; 
   justify-content: space-between;
-  border-bottom: 2px double var(--primary-dark);
+  border-bottom: 1px solid var(--primary-dark);
+  height: 1.75rem;
+}
+
+.action-button, .reset-button {
+  padding: 0.4rem .9rem;
+  margin: 5px 1px;
+  border: 1px solid var(--primary-light);
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  font-size: 14px;
+  background: var(--secondary);
+  color: var(--primary-dark);
+
+  &:hover {
+    background-color: var(--primary);
+    color: var(--secondary-light);
+
+    .arrow-svg {
+      fill: var(--secondary-light);
+    }
+  }
+  
+  &:active {
+    background-color: var(--primary);
+    color: var(--secondary-light);
+
+    .arrow-svg {
+      fill: var(--secondary-light);
+    }
+  }
 }
 
 .action-move-container {
   display: flex;
   column-gap: 0.25rem;
-  background-color: var(--grey);
+  background-color: var(--secondary);
 }
 
 .actions-list {
