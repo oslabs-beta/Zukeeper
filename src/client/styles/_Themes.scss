@@ -1,53 +1,36 @@
 @import './_Colors.scss';
 
 .light-theme {
-    --primary: #434343; // medium grey
-    --primary-dark: #1a1917; // black
-    --primary-light: #afafaf; // light medium grey
-    --secondary: #d9d9d9; // grey
-    --secondary-light: #ffffff; // white
-    --tertiary-dark: rgb(175, 92, 70); // red
-    --tertiary-light: rgb(250, 226, 221); // pink
-    --svg-hover: #ffffff;
+    --primary: #{$medium-grey}; 
+    --primary-dark: #{$black}; 
+    --primary-light: #{$light-medium-grey}; 
+    --secondary: #{$grey};
+    --secondary-light: #{$white}; 
+    --tertiary-dark: #{$red}; 
+    --tertiary-light: #{$pink}; 
+    --svg-hover: #{$white};
   }
 
 .dark-theme {
-    --primary: #7E7E7E; //grey-500
-    --primary-dark: #B1B1B1; //grey-300
-    --primary-light: #B1B1B1; //grey-300
-    --secondary:  #3b3b3b; //grey-800
-    --secondary-light: #222222; //grey-900
-    --tertiary-dark: #af5c46;
-    --tertiary-light: #cc8476;
+    --primary: #{$grey-500}; 
+    --primary-dark: #{$grey-300}; 
+    --primary-light: #{$grey-300}; 
+    --secondary: #{$grey-800}; 
+    --secondary-light: #{$grey-900}; 
+    --tertiary-dark: #{$dark-red};
+    --tertiary-light: #{$dark-pink};
     --svg-hover: var(--tertiary-dark);
     color: #ffffff;
 
-    // Some exception cases
-    // .action-large-button-color-timetravel{
-    //     background-color: var(--tertiary-light);
-    // }
-    // .node__leaf  circle{
-    //     fill: white;
-    // }
-    // .node__root  circle {
-    //     fill: var(--tertiary-light);
-    // }
-    // .visualization-button-color {
-    //     background-color: var(--secondary-light);
-    //     color: #ffffff;
-    // }
-    // #display-container, .visualization-wrapper, .actions-buttons, .action-move-container {
-    //     background-color: #222222; //grey 900
-    // }
-
     #display-container, .actions-container {
-          background-color: #222222; //grey 900
+          background-color: #{$grey-900}; 
     }
 
-    // .actions-container{
-    //     background-color: var(--secondary-light);
-    // }
-    // .diff-item {
-    //     color: #ffffff;
-    // }
+    .diff-item {
+        color: #{$white};
+    }
+
+    .node__branch  circle {
+        stroke: #{$pink};
+      }
 }
