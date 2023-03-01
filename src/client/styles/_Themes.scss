@@ -20,6 +20,7 @@
     --svg-hover: var(--tertiary-dark);
     color: #ffffff;
 
+    // Some exception cases
     .action-large-button-color-timetravel{
         background-color: var(--tertiary-light);
     }
@@ -30,11 +31,15 @@
         fill: var(--tertiary-light);
     }
     .visualization-button-color {
-        background: var(--secondary-light);
+        background-color: var(--secondary-light);
         color: #ffffff;
     }
-    #display-container, .actions-container, .header, .visualization-wrapper {
+    #display-container, .header, .visualization-wrapper, .actions-buttons, .action-move-container {
         background-color: #222222;
+    }
+
+    .actions-container{
+        background-color: var(--secondary-light);
     }
     .diff-item {
         color: #ffffff;

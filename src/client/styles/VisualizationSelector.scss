@@ -3,7 +3,7 @@
 .visualization-wrapper {
   display: flex;
   background: var(--secondary);
-  border-bottom: 2px double var(--primary-dark);
+  border-bottom: 1px solid var(--primary-dark);
   justify-content: space-between;
   align-items: center;
   column-gap: 1rem;
