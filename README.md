@@ -6,7 +6,10 @@ Zukeeper is a set of devtools for Zustand, in Zustand. v1.0.0 features action an
 
 Zukeeper was designed with simplicity in mind, and the setup reflects that. Here's how you can start:
 
-[npm install zukeeper](https://www.npmjs.com/package/zukeeper)
+npm install zukeeper
+```javascript
+npm i zukeeper
+```
 Import zukeeper into your store creation file
 Pass zukeeper as middleware to create( )
 Assign your store, as you named it, to window.store
