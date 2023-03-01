@@ -12,38 +12,42 @@
   }
 
 .dark-theme {
-    --primary: #494949;
-    --primary-dark: #858585;
-    --primary-light: #4b4b4b;
-    --secondary: #434343;
-    --secondary-light: #2e2e2e;
-    --tertiary-dark: #1d1d1d;
-    --tertiary-light: #979797;
+    --primary: #7E7E7E; //grey-500
+    --primary-dark: #B1B1B1; //grey-300
+    --primary-light: #B1B1B1; //grey-300
+    --secondary:  #3b3b3b; //grey-800
+    --secondary-light: #222222; //grey-900
+    --tertiary-dark: #af5c46;
+    --tertiary-light: #cc8476;
     --svg-hover: var(--tertiary-dark);
     color: #ffffff;
 
     // Some exception cases
-    .action-large-button-color-timetravel{
-        background-color: var(--tertiary-light);
-    }
-    .node__leaf  circle{
-        fill: white;
-    }
-    .node__root  circle {
-        fill: var(--tertiary-light);
-    }
-    .visualization-button-color {
-        background-color: var(--secondary-light);
-        color: #ffffff;
-    }
-    #display-container, .header, .visualization-wrapper, .actions-buttons, .action-move-container {
-        background-color: #222222;
+    // .action-large-button-color-timetravel{
+    //     background-color: var(--tertiary-light);
+    // }
+    // .node__leaf  circle{
+    //     fill: white;
+    // }
+    // .node__root  circle {
+    //     fill: var(--tertiary-light);
+    // }
+    // .visualization-button-color {
+    //     background-color: var(--secondary-light);
+    //     color: #ffffff;
+    // }
+    // #display-container, .visualization-wrapper, .actions-buttons, .action-move-container {
+    //     background-color: #222222; //grey 900
+    // }
+
+    #display-container, .actions-container {
+          background-color: #222222; //grey 900
     }
 
-    .actions-container{
-        background-color: var(--secondary-light);
-    }
-    .diff-item {
-        color: #ffffff;
-    }
+    // .actions-container{
+    //     background-color: var(--secondary-light);
+    // }
+    // .diff-item {
+    //     color: #ffffff;
+    // }
 }
