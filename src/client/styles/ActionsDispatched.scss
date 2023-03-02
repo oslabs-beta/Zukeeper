@@ -1,4 +1,4 @@
-@import './_Themes.scss';
+@import "./_Themes.scss";
 
 .actions-container {
   flex-basis: 30%;
@@ -14,28 +14,29 @@
   background-color: var(--secondary-light);
   color: var(--primary-dark);
   border-bottom: 1px solid var(--primary-light);
-  padding: 0.25rem 0.5rem; 
+  padding: 0.25rem 0.5rem;
 }
 
-.actions-input:focus{
+.actions-input:focus {
   outline: none;
 }
 
 .actions-buttons {
   display: flex;
   background-color: var(--secondary);
-  padding: 0.10rem 0.5rem; 
+  padding: 0.1rem 0.5rem;
   justify-content: space-between;
   border-bottom: 1px solid var(--primary-dark);
   height: 2.05rem;
 }
 
-.action-button, .reset-button {
+.action-button,
+.reset-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.4rem .9rem;
-  margin: .7px 1px;
+  padding: 0.4rem 0.9rem;
+  margin: 0.7px 1px;
   border: 1px solid var(--primary-light);
   border-radius: 5px;
   cursor: pointer;
@@ -52,7 +53,7 @@
       fill: var(--secondary-light);
     }
   }
-  
+
   &:active {
     background-color: var(--primary);
     color: var(--secondary-light);

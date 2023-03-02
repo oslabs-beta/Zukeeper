@@ -1,36 +1,43 @@
-@import './_Colors.scss';
+@import "./_Colors.scss";
 
 .light-theme {
-    --primary: #{$medium-grey}; 
-    --primary-dark: #{$black}; 
-    --primary-light: #{$light-medium-grey}; 
-    --secondary: #{$grey};
-    --secondary-light: #{$white}; 
-    --tertiary-dark: #{$red}; 
-    --tertiary-light: #{$pink}; 
-    --svg-hover: #{$white};
-  }
+  --primary: #{$medium-grey};
+  --primary-dark: #{$black};
+  --primary-light: #{$light-medium-grey};
+  --secondary: #{$grey};
+  --secondary-light: #{$white};
+  --tertiary-dark: #{$red};
+  --tertiary-light: #{$pink};
+  --svg-hover: #{$white};
+}
 
 .dark-theme {
-    --primary: #{$grey-500}; 
-    --primary-dark: #{$grey-300}; 
-    --primary-light: #{$grey-300}; 
-    --secondary: #{$grey-800}; 
-    --secondary-light: #{$grey-900}; 
-    --tertiary-dark: #{$dark-red};
-    --tertiary-light: #{$dark-pink};
-    --svg-hover: var(--tertiary-dark);
-    color: #ffffff;
+  --primary: #{$grey-500};
+  --primary-dark: #{$grey-300};
+  --primary-light: #{$grey-300};
+  --secondary: #{$grey-800};
+  --secondary-light: #{$grey-900};
+  --tertiary-dark: #{$dark-red};
+  --tertiary-light: #{$dark-pink};
+  --svg-hover: var(--tertiary-dark);
+  color: #ffffff;
 
-    #display-container, .actions-container {
-          background-color: #{$grey-900}; 
+  #display-container,
+  .actions-container {
+    background-color: #{$grey-900};
+  }
+
+  .diff-item {
+    color: #{$white};
+  }
+
+  .node__branch circle {
+    stroke: #{$pink};
+  }
+
+  .action-large-button {
+    &:hover {
+      background-color: #{$grey-600} !important;
     }
-
-    .diff-item {
-        color: #{$white};
-    }
-
-    .node__branch  circle {
-        stroke: #{$pink};
-      }
+  }
 }

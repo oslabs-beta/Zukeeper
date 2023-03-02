@@ -5,12 +5,8 @@ import { useStore } from "zustand";
 import "../styles/DiffDisplay.scss";
 
 export const DiffItem = (props: diffProps): JSX.Element => {
-  const { 
-    previousStates, 
-    currState, 
-    prevState,
-    isDarkMode 
-  } = useStore(useExtensionStore);
+  const { previousStates, currState, prevState, isDarkMode } =
+    useStore(useExtensionStore);
 
   let path: string = "";
   for (let element of props.obj.path) {
@@ -20,23 +16,31 @@ export const DiffItem = (props: diffProps): JSX.Element => {
   }
 
   path = path.slice(0, -1);
-
   let item: JSX.Element = <></>;
-
   if (props.obj.kind === "E") {
     item = (
-      <div className={`diff-item ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>
+      <div className={`diff-item ${isDarkMode ? "dark-theme" : "light-theme"}`}>
         {path}: {props.obj.lhs} {"=>"} {props.obj.rhs}
       </div>
     );
   } else if (props.obj.kind === "N") {
-    item = <div className={`diff-item ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>newly added {props.obj.rhs}</div>;
+    item = (
+      <div className={`diff-item ${isDarkMode ? "dark-theme" : "light-theme"}`}>
+        newly added {props.obj.rhs}
+      </div>
+    );
   } else if (props.obj.kind === "D") {
-    item = <div className={`diff-item ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>deleted {props.obj.lhs}</div>;
+    item = (
+      <div className={`diff-item ${isDarkMode ? "dark-theme" : "light-theme"}`}>
+        deleted {props.obj.lhs}
+      </div>
+    );
   } else if (props.obj.kind === "A") {
     if (props.obj.item.kind === "D") {
       item = (
-        <div className={`diff-item ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>
+        <div
+          className={`diff-item ${isDarkMode ? "dark-theme" : "light-theme"}`}
+        >
           <div>{path}: </div>
           <div>
             + deleted array element {props.obj.item.lhs} at index{" "}
@@ -47,7 +51,9 @@ export const DiffItem = (props: diffProps): JSX.Element => {
     } else if (props.obj.item.kind === "N") {
       if (props.action) {
         item = (
-          <div className={`diff-item ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>
+          <div
+            className={`diff-item ${isDarkMode ? "dark-theme" : "light-theme"}`}
+          >
             <div>{path}: </div>
             <div>
               + Added array element {props.obj.item.rhs} at index{" "}
@@ -67,7 +73,9 @@ export const DiffItem = (props: diffProps): JSX.Element => {
         );
       } else {
         item = (
-          <div className={`diff-item ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>
+          <div
+            className={`diff-item ${isDarkMode ? "dark-theme" : "light-theme"}`}
+          >
             <div>{path}: </div>
             <div>
               + Added array element {props.obj.item.rhs} at index{" "}

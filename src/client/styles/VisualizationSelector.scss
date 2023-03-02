@@ -1,4 +1,4 @@
-@import './_Themes.scss';
+@import "./_Themes.scss";
 
 .visualization-wrapper {
   display: flex;
@@ -21,7 +21,7 @@
 }
 
 .visualization-display-button {
-  padding: 0.4rem .9rem;
+  padding: 0.4rem 0.9rem;
   margin: 5px 1px;
   border: 1px solid var(--primary-light);
   border-radius: 5px;
