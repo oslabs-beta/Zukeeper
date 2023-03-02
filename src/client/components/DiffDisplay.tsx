@@ -7,7 +7,8 @@ const diff = require("deep-diff").diff;
 import "../styles/DiffDisplay.scss";
 
 const DiffDisplay = (): null | JSX.Element => {
-  const { previousStates, currState, prevState } = useStore(useExtensionStore);
+  const { previousStates, currState, prevState, isDarkMode } =
+    useStore(useExtensionStore);
 
   /* 
     render conditionally based on if action button was clicked 
@@ -28,7 +29,16 @@ const DiffDisplay = (): null | JSX.Element => {
         return <DiffItem key={idx} obj={obj} action={true} />;
       }
     );
-    return <div className="diff-item-container">{diffItems}</div>;
+
+    return (
+      <div
+        className={`diff-item-container ${
+          isDarkMode ? "dark-theme" : "light-theme"
+        }`}
+      >
+        {diffItems}
+      </div>
+    );
   } else if (previousStates[previousStates.length - 2]) {
     const differences: diffItemTypes[] = diff(
       previousStates[previousStates.length - 2],
@@ -39,7 +49,16 @@ const DiffDisplay = (): null | JSX.Element => {
         return <DiffItem key={idx} obj={obj} action={false} />;
       }
     );
-    return <div className="diff-item-container">{diffItems}</div>;
+
+    return (
+      <div
+        className={`diff-item-container ${
+          isDarkMode ? "dark-theme" : "light-theme"
+        }`}
+      >
+        {diffItems}
+      </div>
+    );
   } else return null;
 };
 

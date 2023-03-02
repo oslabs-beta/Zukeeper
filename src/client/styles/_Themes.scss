@@ -1,6 +1,7 @@
 @import "./_Colors.scss";
 
 .light-theme {
+<<<<<<< HEAD
   --primary: #434343; // medium grey
   --primary-dark: #1a1917; // black
   --primary-light: #afafaf; // light medium grey
@@ -27,3 +28,38 @@
     background-color: #222222; //grey 900
   }
 }
+=======
+    --primary: #{$medium-grey}; 
+    --primary-dark: #{$black}; 
+    --primary-light: #{$light-medium-grey}; 
+    --secondary: #{$grey};
+    --secondary-light: #{$white}; 
+    --tertiary-dark: #{$red}; 
+    --tertiary-light: #{$pink}; 
+    --svg-hover: #{$white};
+  }
+
+.dark-theme {
+    --primary: #{$grey-500}; 
+    --primary-dark: #{$grey-300}; 
+    --primary-light: #{$grey-300}; 
+    --secondary: #{$grey-800}; 
+    --secondary-light: #{$grey-900}; 
+    --tertiary-dark: #{$dark-red};
+    --tertiary-light: #{$dark-pink};
+    --svg-hover: var(--tertiary-dark);
+    color: #ffffff;
+
+    #display-container, .actions-container {
+          background-color: #{$grey-900}; 
+    }
+
+    .diff-item {
+        color: #{$white};
+    }
+
+    .node__branch  circle {
+        stroke: #{$pink};
+      }
+}
+>>>>>>> 89b557d7d31b5d2e755b798b6bb5f25536ce4044
