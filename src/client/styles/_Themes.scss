@@ -9,7 +9,7 @@
     --tertiary-dark: #{$red}; 
     --tertiary-light: #{$pink}; 
     --svg-hover: #{$white};
-  }
+}
 
 .dark-theme {
     --primary: #{$grey-500}; 
@@ -23,7 +23,7 @@
     color: #ffffff;
 
     #display-container, .actions-container {
-          background-color: #{$grey-900}; 
+        background-color: #{$grey-900}; 
     }
 
     .diff-item {
@@ -32,5 +32,11 @@
 
     .node__branch  circle {
         stroke: #{$pink};
-      }
+    }
+
+    .action-large-button {
+        &:hover {
+            background-color: #{$grey-600} !important;
+        }
+    }
 }
