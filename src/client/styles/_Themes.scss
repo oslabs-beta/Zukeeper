@@ -1,42 +1,36 @@
+@import './_Colors.scss';
+
 .light-theme {
-    --primary: #434343; // medium grey
-    --primary-dark: #1a1917; // black
-    --primary-light: #afafaf; // light medium grey
-    --secondary: #d9d9d9; // grey
-    --secondary-light: #ffffff; // white
-    --tertiary-dark: rgb(175, 92, 70); // red
-    --tertiary-light: rgb(250, 226, 221); // pink
-    --svg-hover: #ffffff;
+    --primary: #{$medium-grey}; 
+    --primary-dark: #{$black}; 
+    --primary-light: #{$light-medium-grey}; 
+    --secondary: #{$grey};
+    --secondary-light: #{$white}; 
+    --tertiary-dark: #{$red}; 
+    --tertiary-light: #{$pink}; 
+    --svg-hover: #{$white};
   }
 
 .dark-theme {
-    --primary: #494949;
-    --primary-dark: #858585;
-    --primary-light: #4b4b4b;
-    --secondary: #434343;
-    --secondary-light: #2e2e2e;
-    --tertiary-dark: #1d1d1d;
-    --tertiary-light: #979797;
+    --primary: #{$grey-500}; 
+    --primary-dark: #{$grey-300}; 
+    --primary-light: #{$grey-300}; 
+    --secondary: #{$grey-800}; 
+    --secondary-light: #{$grey-900}; 
+    --tertiary-dark: #{$dark-red};
+    --tertiary-light: #{$dark-pink};
     --svg-hover: var(--tertiary-dark);
     color: #ffffff;
 
-    .action-large-button-color-timetravel{
-        background-color: var(--tertiary-light);
+    #display-container, .actions-container {
+          background-color: #{$grey-900}; 
     }
-    .node__leaf  circle{
-        fill: white;
-    }
-    .node__root  circle {
-        fill: var(--tertiary-light);
-    }
-    .visualization-button-color {
-        background: var(--secondary-light);
-        color: #ffffff;
-    }
-    #display-container, .actions-container, .header, .visualization-wrapper {
-        background-color: #222222;
-    }
+
     .diff-item {
-        color: #ffffff;
+        color: #{$white};
     }
+
+    .node__branch  circle {
+        stroke: #{$pink};
+      }
 }

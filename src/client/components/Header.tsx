@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import useExtensionStore from "../store/useExtensionStore";
 import { useStore } from "zustand";
 import "../styles/Header.scss";
 
 export const Header = (): JSX.Element => {
-  const {
-    isDarkMode,
-    toggleDarkMode,
-    applyTheme,
-  } = useStore(useExtensionStore);
+  const { isDarkMode, toggleDarkMode, applyTheme, actionsDispatched } =
+    useStore(useExtensionStore);
 
   applyTheme(isDarkMode);
+
+  useEffect(() => {
+    applyTheme(isDarkMode);
+  }, [actionsDispatched]);
 
   return (
     <header className="header">
@@ -60,7 +61,7 @@ export const Header = (): JSX.Element => {
           </svg>
         </a>
         <a
-          href="#"
+          href="https://medium.com/@zukeeper.tools/zukeeper-bearable-zustand-devtools-625c031417e9"
           target="_blank"
           title="Home Page"
         >

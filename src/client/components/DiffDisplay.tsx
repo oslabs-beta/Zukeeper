@@ -7,7 +7,12 @@ import { diffProps } from "../../types/types";
 import "../styles/DiffDisplay.scss";
 
 const DiffDisplay = (): null | JSX.Element => {
-  const { previousStates, currState, prevState } = useStore(useExtensionStore);
+  const { 
+    previousStates, 
+    currState, 
+    prevState,
+    isDarkMode, 
+  } = useStore(useExtensionStore);
   console.log("currState", currState);
   console.log("prevState", prevState);
 
@@ -26,7 +31,7 @@ const DiffDisplay = (): null | JSX.Element => {
       }
     );
 
-    return <div className="diff-item-container">{diffItems}</div>;
+    return <div className={`diff-item-container ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>{diffItems}</div>;
   } else if (previousStates[previousStates.length - 2]) {
     const differences1: any[] = diff(
       previousStates[previousStates.length - 2],
@@ -45,7 +50,7 @@ const DiffDisplay = (): null | JSX.Element => {
       }
     );
 
-    return <div className="diff-item-container">{diffItems}</div>;
+    return <div className={`diff-item-container ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>{diffItems}</div>;
   } else return null;
 };
 
