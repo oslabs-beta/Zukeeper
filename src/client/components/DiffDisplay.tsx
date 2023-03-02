@@ -24,11 +24,15 @@ const DiffDisplay = (): null | JSX.Element => {
 
   if (Object.keys(currState).length > 0 && Object.keys(prevState).length > 0) {
     const differences: diffItemTypes[] = diff(prevState, currState);
-    const diffItems: JSX.Element[] = differences.map(
-      (obj: diffItemTypes, idx: number) => {
-        return <DiffItem key={idx} obj={obj} action={true} />;
-      }
-    );
+
+    let diffItems: JSX.Element[] = [];
+    if (differences) {
+      diffItems = differences.map(
+        (obj: diffItemTypes, idx: number) => {
+          return <DiffItem key={idx} obj={obj} action={true} />;
+        }
+      );
+    }
 
     return (
       <div
@@ -44,11 +48,15 @@ const DiffDisplay = (): null | JSX.Element => {
       previousStates[previousStates.length - 2],
       previousStates[previousStates.length - 1]
     );
-    const diffItems: JSX.Element[] = differences.map(
-      (obj: diffItemTypes, idx: number) => {
-        return <DiffItem key={idx} obj={obj} action={false} />;
-      }
-    );
+
+    let diffItems: JSX.Element[] = [];
+    if (differences) {
+      diffItems = differences.map(
+        (obj: diffItemTypes, idx: number) => {
+          return <DiffItem key={idx} obj={obj} action={false} />;
+        }
+      );
+    }
 
     return (
       <div
