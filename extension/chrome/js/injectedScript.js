@@ -1,10 +1,16 @@
 // Figure out a way to not use window object
+store = window.store;
+
+window.postMessage({
+  body: 'Innit',
+  state: JSON.stringify(store),
+});
+
 
 window.addEventListener('message', (event) => {
-  store = window.store;
   if (event.data.body === 'TimeTravel') {
     const currState = event.data.TimeTravel
-    console.log('is this working', currState)
     store.setState(currState);
   }
 });
+

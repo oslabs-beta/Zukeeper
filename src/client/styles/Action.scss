@@ -1,0 +1,71 @@
+@import './_Themes.scss';
+
+.action-button-container {
+  display: flex;
+  position: relative;
+  border-bottom: solid var(--primary-dark) 1px;
+  align-items: center;
+}
+
+.action-large-button {
+  color: var(--primary-dark);
+  border-bottom: solid var(--primary-dark) 1px;
+  font-size: 0.75rem;
+  border: none;
+  background-color: var(--secondary-light);
+  padding: 0.75rem 0.5rem;
+  width: 100%;
+  text-align:left;
+  transition-duration: 0.2s;
+  cursor: pointer;
+
+  .action-text-wrapper {
+    width: calc(100% - 4rem);
+    overflow: hidden;
+    white-space: nowrap;
+
+    .action-text {
+      margin: 0;
+    }
+  }
+
+  &:hover {
+    // background-color: var(--primary);
+    // color: var(--secondary-light);
+    background-color: var(--primary-light);
+    color: var(--secondary-light);
+  }
+}
+
+.action-small-button {
+  position: absolute;
+  border: 1px solid var(--primary-light);
+  border-radius: 5px;
+  color: var(--primary);
+  background-color: var(--secondary);
+  cursor: pointer;
+  transition-duration: 0.2s;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.75rem;
+  right: 0px;
+
+  &:hover {
+    background-color: var(--tertiary-dark);
+    color: var(--secondary-light);
+  }
+}
+
+.action-small-button-color {
+  background-color: var(--tertiary-dark);
+  color: var(--secondary-light);
+}
+
+.action-large-button-color-timetravel {
+  background-color: var(--tertiary-light);
+  color: var(--primary-dark);
+}
+
+.action-large-button-color {
+  background: var(--primary);
+  color: var(--secondary-light);
+}

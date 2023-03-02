@@ -10,7 +10,6 @@ chrome.runtime.onConnect.addListener((port) => {
   });
   
   devToolPort.onMessage.addListener((message, sender, sendResponse) => {
-    console.log(developerTab)
     if (message.body === 'TimeTravel') {
       chrome.tabs.sendMessage(developerTab.id, {
         body: 'TimeTravel',
@@ -24,6 +23,7 @@ chrome.runtime.onConnect.addListener((port) => {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (devToolPort) {
     if (request.body === 'Data') {
+
       devToolPort.postMessage({
         body: request.body,
         state: JSON.parse(request.state),
@@ -39,7 +39,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-  if (tabId === developerTab) {
+  if (tabId === developerTab.id) {
     devToolPort.postMessage({
       body: 'Reset',
     });

@@ -1,0 +1,48 @@
+@import './_Themes.scss';
+
+.visualization-wrapper {
+  display: flex;
+  background: var(--secondary);
+  border-bottom: 1px solid var(--primary-dark);
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+  height: 2.25rem;
+}
+
+.visualization-current-button {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.visualization-buttons-container {
+  margin-right: 1rem;
+  flex: none;
+}
+
+.visualization-display-button {
+  padding: 0.4rem .9rem;
+  margin: 5px 1px;
+  border: 1px solid var(--primary-light);
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  font-size: 14px;
+  background: var(--secondary);
+  color: var(--primary-dark);
+
+  &:hover {
+    background-color: var(--primary);
+    color: var(--secondary-light);
+  }
+
+  &:active {
+    background-color: var(--primary);
+    color: var(--secondary-light);
+  }
+}
+
+.visualization-button-color {
+  background: var(--primary);
+  color: var(--secondary-light);
+}
