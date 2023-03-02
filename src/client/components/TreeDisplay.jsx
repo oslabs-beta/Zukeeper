@@ -6,13 +6,15 @@ import hierarchyConv from "../algorithms/hierarchyConv";
 import "../styles/TreeDisplay.scss";
 
 const TreeDisplay = () => {
-  const { 
-    previousStates, 
-    currState,
-    isDarkMode 
-  } = useStore(useExtensionStore);
+  const { previousStates, currState, isDarkMode } = useStore(useExtensionStore);
 
   let stateHeirarchy;
+  /* 
+    assign stateHierarchy to the result of invoking hierarchyConv passing in the currState if an
+    action button was selected or by selecting the last state object in the previousStates array
+
+    hierarchyConv converts the current state to a hierarchal structure readable by the d3 library hierarchy method
+  */
   if (Object.keys(currState).length > 0) {
     stateHeirarchy = hierarchyConv(currState);
   } else {
@@ -21,13 +23,10 @@ const TreeDisplay = () => {
 
   const renderForeignObjectNode = ({ nodeDatum, toggleNode }) => (
     <g>
-      <circle
-        r={10}
-        onClick={toggleNode}
-      />
+      <circle r={10} onClick={toggleNode} />
       <text
-        fill={`${isDarkMode ? 'white' : 'black'}`}
-        stroke={`${isDarkMode ? 'white' : 'black'}`}
+        fill={`${isDarkMode ? "white" : "black"}`}
+        stroke={`${isDarkMode ? "white" : "black"}`}
         strokeWidth="1"
         y="4"
         x={nodeDatum.children ? "-13" : "13"}
@@ -37,8 +36,8 @@ const TreeDisplay = () => {
       </text>
       {nodeDatum.attributes && (
         <text
-          fill={`${isDarkMode ? 'white' : 'black'}`}
-          stroke={`${isDarkMode ? 'white' : 'black'}`}
+          fill={`${isDarkMode ? "white" : "black"}`}
+          stroke={`${isDarkMode ? "white" : "black"}`}
           strokeWidth="1"
           x="20"
           dy="20"
@@ -50,10 +49,7 @@ const TreeDisplay = () => {
   );
 
   return (
-    <div
-      id="treeWrapper"
-      style={{ width: "100%", height: "100vh" }}
-    >
+    <div id="treeWrapper" style={{ width: "100%", height: "100vh" }}>
       <Tree
         data={stateHeirarchy}
         rootNodeClassName="node__root"

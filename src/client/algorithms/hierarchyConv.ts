@@ -1,3 +1,29 @@
+/* 
+hierarchyConv takes in the state to display in the visualization tree,
+and converts it to a format readable by D3. 
+
+const example = {
+  name: 'State',
+  children: [
+    {
+      name: 'member1',
+      attributes: {
+        value: 'org1',
+      },
+    },
+    {
+      name: 'member2',
+      children: [
+        name: 'member3',
+        attributes: {
+          value: 'org2'
+        }
+      ]
+    }
+  ]
+}  
+ */
+
 function hierarchyConv(state) {
   const parent = {
     name: "root",

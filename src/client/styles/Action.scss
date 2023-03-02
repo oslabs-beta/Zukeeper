@@ -1,4 +1,4 @@
-@import './_Themes.scss';
+@import "./_Themes.scss";
 
 .action-button-container {
   display: flex;
@@ -15,7 +15,7 @@
   background-color: var(--secondary-light);
   padding: 0.75rem 0.5rem;
   width: 100%;
-  text-align:left;
+  text-align: left;
   transition-duration: 0.2s;
   cursor: pointer;
 
