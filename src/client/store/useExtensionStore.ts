@@ -93,6 +93,7 @@ const useExtensionStore = create<Store>()(
           isDarkMode: !isDarkMode,
         });
       },
+      // Applies the appropriate theme on all divs based on the logic from toggleDarkMode function.
 
       applyTheme: (isDarkMode) => {
         const elements = document

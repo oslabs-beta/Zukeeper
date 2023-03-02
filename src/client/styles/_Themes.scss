@@ -34,4 +34,10 @@
   .node__branch circle {
     stroke: #{$pink};
   }
+
+  .action-large-button {
+    &:hover {
+      background-color: #{$grey-600} !important;
+    }
+  }
 }
