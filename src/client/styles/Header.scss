@@ -1,4 +1,4 @@
-@import './_Themes.scss';
+@import "./_Themes.scss";
 
 .header {
   display: flex;
@@ -38,16 +38,16 @@
   align-items: center;
   margin-right: 1.5rem;
 
-  .icon{
+  .icon {
     color: var(--primary);
     transition-duration: 0.2s;
-    
-    &:hover, &:active{
+
+    &:hover,
+    &:active {
       fill: var(--primary-light);
     }
   }
 }
-
 
 /* The switch - the box around the slider */
 .switch {
@@ -71,7 +71,7 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -82,7 +82,7 @@
   left: 4px;
   top: 2px;
   background-color: var(--secondary-light);
-  transition: .4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {

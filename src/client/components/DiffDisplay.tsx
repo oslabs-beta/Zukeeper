@@ -1,56 +1,72 @@
 import React from "react";
 import useExtensionStore from "../store/useExtensionStore";
 import { useStore } from "zustand";
-const diff = require("deep-diff").diff;
 import { DiffItem } from "./DiffItem";
-import { diffProps } from "../../types/types";
+import { diffItemTypes } from "../../types/types";
+const diff = require("deep-diff").diff;
 import "../styles/DiffDisplay.scss";
 
 const DiffDisplay = (): null | JSX.Element => {
-  const { 
-    previousStates, 
-    currState, 
-    prevState,
-    isDarkMode, 
-  } = useStore(useExtensionStore);
-  console.log("currState", currState);
-  console.log("prevState", prevState);
+  const { previousStates, currState, prevState, isDarkMode } =
+    useStore(useExtensionStore);
+
+  /* 
+    render conditionally based on if action button was clicked 
+
+    if currState and prevState have properties, render array of DiffItem componenets using data
+    returned from using the diff function with arguments prevState and currState.
+
+    if currState and prevState are empty, use previousStates array to get latest state data
+    to pass into the diff function. 
+
+    else return null.
+  */
 
   if (Object.keys(currState).length > 0 && Object.keys(prevState).length > 0) {
-    const differences: any[] = diff(prevState, currState);
+    const differences: diffItemTypes[] = diff(prevState, currState);
 
-    const diffItems: JSX.Element[] = differences.map(
-      (obj: diffProps, idx: number) => {
-        return (
-          <DiffItem
-            key={idx}
-            obj={obj}
-            action={true}
-          />
-        );
-      }
+    let diffItems: JSX.Element[] = [];
+    if (differences) {
+      diffItems = differences.map(
+        (obj: diffItemTypes, idx: number) => {
+          return <DiffItem key={idx} obj={obj} action={true} />;
+        }
+      );
+    }
+
+    return (
+      <div
+        className={`diff-item-container ${
+          isDarkMode ? "dark-theme" : "light-theme"
+        }`}
+      >
+        {diffItems}
+      </div>
     );
-
-    return <div className={`diff-item-container ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>{diffItems}</div>;
   } else if (previousStates[previousStates.length - 2]) {
-    const differences1: any[] = diff(
+    const differences: diffItemTypes[] = diff(
       previousStates[previousStates.length - 2],
       previousStates[previousStates.length - 1]
     );
 
-    const diffItems: JSX.Element[] = differences1.map(
-      (obj: diffProps, idx: number) => {
-        return (
-          <DiffItem
-            key={idx}
-            obj={obj}
-            action={false}
-          />
-        );
-      }
-    );
+    let diffItems: JSX.Element[] = [];
+    if (differences) {
+      diffItems = differences.map(
+        (obj: diffItemTypes, idx: number) => {
+          return <DiffItem key={idx} obj={obj} action={false} />;
+        }
+      );
+    }
 
-    return <div className={`diff-item-container ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>{diffItems}</div>;
+    return (
+      <div
+        className={`diff-item-container ${
+          isDarkMode ? "dark-theme" : "light-theme"
+        }`}
+      >
+        {diffItems}
+      </div>
+    );
   } else return null;
 };
 

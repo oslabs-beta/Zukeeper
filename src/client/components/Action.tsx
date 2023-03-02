@@ -13,12 +13,13 @@ export const Action = (props: actionProps): JSX.Element => {
     setTimeTravel,
     highlightTime,
     setHighlightTime,
-    previousStates
   } = useStore(useExtensionStore);
 
+  /* 
+    stateChangeHandler triggered with action button click
+    if time travel button clicked, bool is passed in as true, else false
+  */
   const stateChangeHandler = (bool: boolean): void => {
-    console.log('props.idx',props.idx)
-    console.log('previous states', previousStates)
     setActionIndex(props.idx);
     setCurrState(props.idx);
     setPrevState(props.idx - 1);
@@ -26,6 +27,7 @@ export const Action = (props: actionProps): JSX.Element => {
     setHighlightTime(bool, props.idx, props.length);
   };
 
+  // renders action buttons and handles conditional rendering of styling
   return (
     <div className="action-button-container">
       <button
@@ -46,7 +48,7 @@ export const Action = (props: actionProps): JSX.Element => {
       </button>
       <button
         className={`action-small-button ${
-          highlightTime[0] === props.idx ? "action-small-button-color " : ""
+          highlightTime[0] === props.idx ? "action-small-button-color" : ""
         }`}
         onClick={() => stateChangeHandler(true)}
       >

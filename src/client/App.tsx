@@ -18,15 +18,15 @@ const App = () => {
     timeTravel,
     setTimeTravel,
     initialState,
-    reset, 
+    reset,
     setReset,
   } = useStore(useExtensionStore);
 
-  // let connected: boolean = false;
-  console.log("rerender");
   const connect = (): void => {
+    // connect to port
     port = chrome.runtime.connect();
-    // connected = true;
+
+    // listen for messages from background
     port.onMessage.addListener(
       (
         message: any,
@@ -39,7 +39,7 @@ const App = () => {
         }
         if (message.body === "Innit") {
           setInitialState(message.state);
-          console.log('message.state', message.state)
+          console.log("message.state", message.state);
         }
         if (message.body === "Reset") {
           resetState();
@@ -50,15 +50,14 @@ const App = () => {
 
   useEffect(() => {
     connect();
-    //disconnects port when user leaves the dev -- double check this
+    //disconnects port when user leaves the dev
     window.addEventListener("beforeunload", () => {
       port.disconnect();
     });
   }, []);
 
+  // send message to background with currState for time travel
   useEffect(() => {
-    // console.log("port", port);
-    console.log('time')
     if (timeTravel) {
       port.postMessage({
         body: "TimeTravel",
@@ -68,9 +67,8 @@ const App = () => {
     }
   }, [timeTravel]);
 
+  // send message to background with initialState for resetting state
   useEffect(() => {
-    // console.log("port", port);
-    console.log('reset')
     resetState();
     if (reset) {
       port.postMessage({

@@ -6,9 +6,11 @@ import "../styles/Header.scss";
 export const Header = (): JSX.Element => {
   const { isDarkMode, toggleDarkMode, applyTheme, actionsDispatched } =
     useStore(useExtensionStore);
-
+  
+  // Applies appropriate theme when loaded
   applyTheme(isDarkMode);
-
+  
+  // Every time actions are dispatched, check if in dark mode or not, and apply theme accordingly.
   useEffect(() => {
     applyTheme(isDarkMode);
   }, [actionsDispatched]);
@@ -17,10 +19,7 @@ export const Header = (): JSX.Element => {
     <header className="header">
       <section className="header-left">
         <label className="switch">
-          <input
-            type="checkbox"
-            onClick={() => toggleDarkMode(isDarkMode)}
-          />
+          <input type="checkbox" onClick={() => toggleDarkMode(isDarkMode)} />
           <span className="slider round" />
         </label>
       </section>

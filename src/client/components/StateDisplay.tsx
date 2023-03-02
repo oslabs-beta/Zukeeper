@@ -4,25 +4,26 @@ import { useStore } from "zustand";
 import "../styles/StateDisplay.scss";
 
 export const StateDisplay = (): JSX.Element => {
-  // grabbing all previous states from our store
-  const { 
-    previousStates, 
-    actionIndex,
-    isDarkMode
-  } = useStore(useExtensionStore);
+  const { previousStates, actionIndex, isDarkMode } =
+    useStore(useExtensionStore);
 
   let currState: any;
-  // determine if there is an non-undefined value for the current state - which should be the last element of the array
-  // if yes, grab that value, if no, return an empty array
+  /*
+    assign currState to the state corresponding to the action buttons list if actionIndex is not null
+    if not assign the currState to the last element of the previous states array if it exists,
+    otherwise assign currState to an empty array
+  */
   if (actionIndex !== null) {
     currState = previousStates[actionIndex + 1];
   } else {
     currState = previousStates[previousStates.length - 1]
       ? previousStates[previousStates.length - 1]
-      : [];
+      : {};
   }
+
   const currStateArr: JSX.Element[] = [];
 
+  // populate currStateArr array with divs encapsulating the state of each property in currState object
   for (let key in currState) {
     const value: string = JSON.stringify(currState[key])
       .replaceAll(/,/g, ", ")
@@ -30,7 +31,9 @@ export const StateDisplay = (): JSX.Element => {
 
     currStateArr.push(
       <div
-        className={`current-state-item ${isDarkMode ? 'dark-theme' : 'light-theme'}`}
+        className={`current-state-item ${
+          isDarkMode ? "dark-theme" : "light-theme"
+        }`}
         key={key + value}
       >
         {key}: {value}

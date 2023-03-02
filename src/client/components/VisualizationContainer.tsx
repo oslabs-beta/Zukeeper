@@ -8,11 +8,10 @@ import "../styles/VisualizationContainer.scss";
 const DiffDisplay = lazy(() => import("./DiffDisplay"));
 const TreeDisplay = lazy(() => import("./TreeDisplay"));
 
+// handle displayed element (state,diff,tree) based on what tab was selected
+
 export const VisualizationContainer = (): JSX.Element => {
-  const { 
-    displayState, 
-    displayDiff,
-  } = useStore(useExtensionStore);
+  const { displayState, displayDiff } = useStore(useExtensionStore);
   return (
     <>
       <section id="visualization-container">
