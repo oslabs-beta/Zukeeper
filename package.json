@@ -1,6 +1,6 @@
 {
   "name": "zukeeper",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A native, holistic developer tool for Zustand",
   "main": "./src/client/index.js",
   "scripts": {

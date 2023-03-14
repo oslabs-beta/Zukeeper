@@ -33,7 +33,7 @@
       "matches": ["<all_urls>"]
     }
   ],
-  "permissions": ["tabs", "activeTab", "scripting", "storage"],
+  "permissions": [],
   "host_permissions": ["<all_urls>"],
   "externally_connectable": {
     "matches": ["<all_urls>"]
