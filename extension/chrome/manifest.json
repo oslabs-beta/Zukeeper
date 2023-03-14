@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "name": "ZuKeeper: Zustand DevTools",
-  "description": "Zustand DevTools for debugging application's state changes.",
+  "name": "Zukeeper: Devtools for Zustand",
+  "description": "Devtools for Zustand, in Zustand",
   "manifest_version": 3,
   "homepage_url": "https://github.com/oslabs-beta/Zukeeper#readme",
   "author": "Chris Olmsted, George Vazquez, Santi Lorenzo, Stephen Lee",
