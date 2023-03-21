@@ -11,6 +11,9 @@
 
 .header-left {
   margin-left: 1.5rem;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
 }
 
 .header-store {
