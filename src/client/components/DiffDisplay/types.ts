@@ -3,7 +3,7 @@ export type diffProps = {
   action: boolean;
 };
 
-export interface diffItemTypes {
+export type diffItemTypes = {
   kind: string | undefined;
   path: any;
   lhs?: string | undefined;

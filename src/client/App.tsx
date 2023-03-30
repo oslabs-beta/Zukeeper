@@ -39,7 +39,6 @@ const App = () => {
         }
         if (message.body === "Innit") {
           setInitialState(message.state);
-          console.log("message.state", message.state);
         }
         if (message.body === "Reset") {
           resetState();
