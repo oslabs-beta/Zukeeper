@@ -1,9 +1,9 @@
 import React from "react";
 import Tree from "react-d3-tree";
-import useExtensionStore from "../store/useExtensionStore";
+import useExtensionStore from "../../store/useExtensionStore";
 import { useStore } from "zustand";
-import hierarchyConv from "../algorithms/hierarchyConv";
-import "../styles/TreeDisplay.scss";
+import hierarchyConv from "../../algorithms/hierarchyConv";
+import "./TreeDisplay.scss";
 
 const TreeDisplay = () => {
   const { previousStates, currState, isDarkMode } = useStore(useExtensionStore);

@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from "react";
-import useExtensionStore from "../store/useExtensionStore";
+import useExtensionStore from "../../store/useExtensionStore";
 import { useStore } from "zustand";
-import { Action } from "./Action";
-import "../styles/ActionsDispatched.scss";
+import { Action } from "../Action";
+import "./ActionsDispatched.scss";
 
 export const ActionsDispatched = (): JSX.Element => {
   const {
