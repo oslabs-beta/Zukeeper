@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import useExtensionStore from "../store/useExtensionStore";
+import useExtensionStore from "../../store/useExtensionStore";
 import { useStore } from "zustand";
-import "../styles/Header.scss";
+import "./Header.scss";
 
 export const Header = (): JSX.Element => {
   const { isDarkMode, toggleDarkMode, applyTheme, actionsDispatched } =

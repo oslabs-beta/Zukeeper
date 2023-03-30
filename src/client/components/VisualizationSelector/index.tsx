@@ -1,7 +1,7 @@
 import React from "react";
-import useExtensionStore from "../store/useExtensionStore";
+import useExtensionStore from "../../store/useExtensionStore";
 import { useStore } from "zustand";
-import "../styles/VisualizationSelector.scss";
+import "./VisualizationSelector.scss";
 
 export const VisualizationSelector = (): JSX.Element => {
   const {

@@ -1,8 +1,8 @@
 import React from "react";
-import { actionProps } from "../../types/types";
-import useExtensionStore from "../store/useExtensionStore";
+import { actionProps } from "./types";
+import useExtensionStore from "../../store/useExtensionStore";
 import { useStore } from "zustand";
-import "../styles/Action.scss";
+import "./Action.scss";
 
 export const Action = (props: actionProps): JSX.Element => {
   const {

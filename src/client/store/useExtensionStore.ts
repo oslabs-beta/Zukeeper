@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { Store } from "../../types/types";
+import { Store } from "./types";
 
 const useExtensionStore = create<Store>()(
   persist<Store>(
