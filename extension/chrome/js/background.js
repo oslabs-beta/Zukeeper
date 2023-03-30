@@ -42,9 +42,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
 // on tab update, reset state of devtool
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-  if (tabId === developerTab.id) {
-    devToolPort.postMessage({
-      body: "Reset",
-    });
+  if (developerTab) {
+    if (tabId === developerTab.id) {
+      devToolPort.postMessage({
+        body: "Reset",
+      });
+    }
   }
 });

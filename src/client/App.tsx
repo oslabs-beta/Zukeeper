@@ -4,7 +4,7 @@ import { ActionsDispatched } from "./components/ActionsDispatched";
 import { VisualizationContainer } from "./components/VisualizationContainer";
 import useExtensionStore from "./store/useExtensionStore";
 import { useStore } from "zustand";
-import "./styles/App.scss";
+import "./App.scss";
 
 let port;
 
@@ -39,7 +39,6 @@ const App = () => {
         }
         if (message.body === "Innit") {
           setInitialState(message.state);
-          console.log("message.state", message.state);
         }
         if (message.body === "Reset") {
           resetState();

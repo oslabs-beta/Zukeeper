@@ -1,9 +1,10 @@
-@import "./_Themes.scss";
+@import "../../styles/Themes";
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  column-gap: 1rem;
   height: 3rem;
   background-color: var(--secondary);
   border-bottom: 1px solid var(--primary-dark);

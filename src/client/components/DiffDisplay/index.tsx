@@ -1,10 +1,10 @@
 import React from "react";
-import useExtensionStore from "../store/useExtensionStore";
+import useExtensionStore from "../../store/useExtensionStore";
 import { useStore } from "zustand";
 import { DiffItem } from "./DiffItem";
-import { diffItemTypes } from "../../types/types";
+import { diffItemTypes } from "./types";
 const diff = require("deep-diff").diff;
-import "../styles/DiffDisplay.scss";
+import "./DiffDisplay.scss";
 
 const DiffDisplay = (): null | JSX.Element => {
   const { previousStates, currState, prevState, isDarkMode } =

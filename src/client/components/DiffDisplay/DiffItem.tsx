@@ -1,8 +1,8 @@
 import React from "react";
-import { diffProps } from "../../types/types";
-import useExtensionStore from "../store/useExtensionStore";
+import { diffProps } from "./types";
+import useExtensionStore from "../../store/useExtensionStore";
 import { useStore } from "zustand";
-import "../styles/DiffDisplay.scss";
+import "./DiffDisplay.scss";
 
 export const DiffItem = (props: diffProps): JSX.Element => {
   const { previousStates, currState, prevState, isDarkMode } =

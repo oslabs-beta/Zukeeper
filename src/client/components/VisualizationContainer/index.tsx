@@ -1,12 +1,12 @@
 import React, { lazy, Suspense } from "react";
-import { VisualizationSelector } from "./VisualizationSelector";
-import { StateDisplay } from "./StateDisplay";
-import useExtensionStore from "../store/useExtensionStore";
+import { VisualizationSelector } from "../VisualizationSelector";
+import { StateDisplay } from "../StateDisplay";
+import useExtensionStore from "../../store/useExtensionStore";
 import { useStore } from "zustand";
-import "../styles/VisualizationContainer.scss";
+import "./VisualizationContainer.scss";
 
-const DiffDisplay = lazy(() => import("./DiffDisplay"));
-const TreeDisplay = lazy(() => import("./TreeDisplay"));
+const DiffDisplay = lazy(() => import("../DiffDisplay"));
+const TreeDisplay = lazy(() => import("../TreeDisplay"));
 
 // handle displayed element (state,diff,tree) based on what tab was selected
 

@@ -1,13 +1,13 @@
-@import "./_Themes.scss";
+@import "../../styles/Themes";
 
-.current-state-container {
+.diff-item-container {
   overflow-y: scroll;
   height: calc(100vh - 8.5rem);
   margin: 0.25rem 0.25rem;
   padding: 1rem;
 }
 
-.current-state-item {
+.diff-item {
   margin: 0.25rem;
   border: 1px solid var(--primary-light);
   padding: 1rem 0.5rem;
