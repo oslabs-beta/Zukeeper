@@ -13,6 +13,9 @@
   },
   "keywords": [],
   "author": "Chris Olmsted, George Vazquez, Santi Lorenzo, Stephen Lee",
+  "special thanks": {
+    "coined name": "Meg Schneider",
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/oslabs-beta/Zukeeper/issues"
