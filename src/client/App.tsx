@@ -22,37 +22,35 @@ const App = () => {
     setReset,
   } = useStore(useExtensionStore);
 
+  const listenerCallback = (message: any) => {
+    if (message.body === "Data") {
+      addPreviousState(message.state);
+      addActionDispatched(message.actions);
+    }
+    if (message.body === "Innit") {
+      setInitialState(message.state);
+    }
+    if (message.body === "Reset") {
+      resetState();
+    }
+  }
+
   const connect = (): void => {
     // connect to port
     port = chrome.runtime.connect();
 
     // listen for messages from background
-    port.onMessage.addListener(
-      (
-        message: any,
-        sender: chrome.runtime.MessageSender,
-        sendResponse: Function
-      ) => {
-        if (message.body === "Data") {
-          addPreviousState(message.state);
-          addActionDispatched(message.actions);
-        }
-        if (message.body === "Innit") {
-          setInitialState(message.state);
-        }
-        if (message.body === "Reset") {
-          resetState();
-        }
-      }
-    );
+    port.onMessage.addListener(listenerCallback);
   };
 
   useEffect(() => {
     connect();
-    //disconnects port when user leaves the dev
-    window.addEventListener("beforeunload", () => {
+
+    // clean-up
+    return () => {
+      port.onMessage.removeEventListener(listenerCallback);
       port.disconnect();
-    });
+    }
   }, []);
 
   // send message to background with currState for time travel
