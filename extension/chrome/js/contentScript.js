@@ -2,16 +2,21 @@
   Content script listening for message from the injected script/window and sends message to background.
   The messages are emitted from zukeeper middleware
 */
-window.addEventListener("message", (event) => {
+
+const handleMessage = (event) => {
   chrome.runtime.sendMessage(event.data);
-});
+}
+
+window.addEventListener("message", handleMessage);
 
 // listens for message from background and sends it to window to update store of Zustand application
-chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
+const messageListener = (req) => {
   if (req.body === "TimeTravel") {
     window.postMessage({ body: "TimeTravel", TimeTravel: req.TimeTravel });
   }
-});
+}
+
+chrome.runtime.onMessage.addListener(messageListener);
 
 // inject injectedScript.js
 function injectScript(file) {
@@ -23,3 +28,9 @@ function injectScript(file) {
 }
 
 injectScript("./js/injectedScript.js");
+
+// Clean-up
+window.addEventListener('unload', () => {
+  chrome.runtime.onMessage.removeListener(messageListener);
+  window.removeEventListener("message", handleMessage);
+});

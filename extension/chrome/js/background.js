@@ -24,14 +24,14 @@ chrome.runtime.onConnect.addListener((port) => {
 // listens for messages from content script to send to App.tsx
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (devToolPort) {
-    if (message.body === "Data") {
+    if (message.body === "Data" && message.state !== undefined) {
       devToolPort.postMessage({
         body: message.body,
         state: JSON.parse(message.state),
         actions: message.actions,
       });
     }
-    if (message.body === "Innit") {
+    if (message.body === "Innit" && message.state !== undefined) {
       devToolPort.postMessage({
         body: message.body,
         state: JSON.parse(message.state),
