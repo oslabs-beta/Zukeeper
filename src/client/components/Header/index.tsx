@@ -30,11 +30,12 @@ export const Header = (): JSX.Element => {
   return (
     <header className="header">
       <section className="header-left">
-        {isDarkMode ? darkIcon : lightIcon}
+        {lightIcon}
         <label className="switch">
-          <input type="checkbox" onClick={() => toggleDarkMode(isDarkMode)} />
+          <input type="checkbox" onClick={() => toggleDarkMode(isDarkMode)} defaultChecked={isDarkMode} />
           <span className="slider round" />
         </label>
+        {darkIcon}
       </section>
       <section className="header-store">
         <h1>Zustand Store</h1>

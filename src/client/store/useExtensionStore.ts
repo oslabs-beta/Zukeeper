@@ -87,7 +87,7 @@ const useExtensionStore = create<Store>()(
       },
 
       // configures dark mode
-      isDarkMode: false,
+      isDarkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
       toggleDarkMode: (isDarkMode) => {
         set({
           isDarkMode: !isDarkMode,
