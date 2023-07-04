@@ -32,7 +32,7 @@ export const Header = (): JSX.Element => {
       <section className="header-left">
         {lightIcon}
         <label className="switch">
-          <input type="checkbox" onClick={() => toggleDarkMode(isDarkMode)} defaultChecked={isDarkMode} />
+          <input type="checkbox" onClick={toggleDarkMode} defaultChecked={isDarkMode} />
           <span className="slider round" />
         </label>
         {darkIcon}

@@ -87,11 +87,13 @@ const useExtensionStore = create<Store>()(
       },
 
       // configures dark mode
-      isDarkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
-      toggleDarkMode: (isDarkMode) => {
-        set({
-          isDarkMode: !isDarkMode,
-        });
+      isDarkMode:
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches,
+      toggleDarkMode: () => {
+        set((state) => ({
+          isDarkMode: !state.isDarkMode,
+        }));
       },
       // Applies the appropriate theme on all divs based on the logic from toggleDarkMode function.
 

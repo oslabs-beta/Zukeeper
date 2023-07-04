@@ -24,7 +24,7 @@ export type Store = {
   setHighlightTime: (bool: boolean, idx1: number, idx2: number) => void;
 
   isDarkMode: boolean;
-  toggleDarkMode: (bool: boolean) => void;
+  toggleDarkMode: () => void;
   applyTheme: (bool: boolean) => void;
 
   initialState: {};
