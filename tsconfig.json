@@ -1,18 +1,36 @@
+/*
+This file sets the parameters for the TypeScript compiler.
+*/
+
 {
   "compilerOptions": {
+    // Compile to ES6
     "target": "ES6",
+    // Compile against ES22 and DOM
     "lib": ["ES2022", "DOM"],
+    // Use React JSX
     "jsx": "react",
+    // Use CommonJS module system
     "module": "CommonJS",
+    // Use Chrome and Node.js type definitions
     "types": ["chrome", "node"],
+    // Allow JavaScript
     "allowJs": true,
+    // Create imports for modules without specified default exports
     "allowSyntheticDefaultImports": true,
+    // Allow CommonJS syntax for ECMAScript modules
     "esModuleInterop": true,
+    // * Impose lowercase in file names
     "forceConsistentCasingInFileNames": true,
+    // Enable strict mode
     "strict": true,
+    // Detect implicit anys
     "noImplicitAny": false,
+    // Don't typecheck library files
     "skipLibCheck": true
   },
+  // Compile everything in the src directory
   "include": ["src/**/*"],
+  // Don't compile the node modules or middleware.
   "exclude": ["node_modules", "middleware"],
 }
