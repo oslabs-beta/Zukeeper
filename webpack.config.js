@@ -5,6 +5,7 @@ This is the webpack configuration file for the Chrome extension's background scr
 const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   // Designate entrypoint
@@ -80,6 +81,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "background.html",
       template: path.resolve(__dirname, "./src/background/index.html"),
+    }),
+
+    // For using webpack-bundle-analyzer
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'server',
+      generateStatsFile: false,
     }),
   ],
 
